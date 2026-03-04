@@ -410,13 +410,13 @@ let major = majorStart + seconds * majorRate;
 let minor = minorStart + seconds * minorRate;
 
 document.getElementById("mega").innerText =
-"RM " + mega.toLocaleString("en-MY",{minimumFractionDigits:2});
+"RM " + mega.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 document.getElementById("major").innerText =
-"RM " + major.toLocaleString("en-MY",{minimumFractionDigits:2});
+"RM " + major.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 document.getElementById("minor").innerText =
-"RM " + minor.toLocaleString("en-MY",{minimumFractionDigits:2});
+"RM " + minor.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 }
 

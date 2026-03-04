@@ -265,7 +265,7 @@ color:#aaa;
 
 <h2>MEGA JACKPOT</h2>
 
-<h1 id="jackpot">RM 569.87</h1>
+<h1 id="jackpot">RM 0.00</h1>
 
 <p>Pemenang seterusnya mungkin ANDA!</p>
 
@@ -367,25 +367,48 @@ WhatsApp
 
 <script>
 
-/* JACKPOT 自动增长 */
+/* 初始金额 */
 
-setInterval(function(){
+const startAmount = 0 ;
 
-let el=document.getElementById("jackpot");
+/* 起始时间 */
 
-let num=parseFloat(el.innerText.replace("RM",""));
+const startTime = new Date("2026-01-01T00:00:00").getTime();
 
-let increase=Math.random()*(5.89-2.01)+2.01;
+/* 更新 Jackpot */
 
-num=num+increase;
+function updateJackpot(){
 
-el.innerText="RM "+num.toFixed(2);
+let now = new Date().getTime();
 
-},1000);
+let seconds = (now - startTime) / 1000;
 
+/* 每秒平均增长 */
+
+let base = startAmount + seconds * 0.45;
+
+/* 随机增加 0.01 - 0.99 */
+
+let randomAdd = Math.random() * (0.99 - 0.01) + 0.01;
+
+let jackpot = base + randomAdd;
+
+/* 千位逗号 */
+
+let formatted = jackpot.toLocaleString("en-MY",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+});
+
+document.getElementById("jackpot").innerText = "RM " + formatted;
+
+}
+
+setInterval(updateJackpot,1000);
+
+updateJackpot();
 
 </script>
 
 </body>
 </html>
-

@@ -140,58 +140,99 @@ text-shadow:0 0 10px gold,0 0 20px gold;
 /* VIP */
 
 .vip{
-padding:70px;
+padding:80px 20px;
+}
+
+.vip-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
 }
 
 .vip-box{
-display:inline-flex;
+
+width:190px;
+height:75px;
+
+display:flex;
 align-items:center;
 justify-content:center;
 
-width:180px;
-height:70px;
-
-margin:10px;
-border-radius:12px;
-
 font-weight:bold;
-font-size:18px;
+font-size:20px;
 
-transition:0.3s;
+border-radius:14px;
+
+transition:0.35s;
+
+letter-spacing:1px;
+
+cursor:pointer;
+
 }
 
 /* CLASSIC */
 
 .classic{
+
 color:#bfbfbf;
-border:1px solid #888;
-background:#1a1a1a;
+
+border:1px solid #777;
+
+background:linear-gradient(145deg,#1b1b1b,#0d0d0d);
+
 }
 
 /* SILVER */
 
 .silver{
-color:#e5e5e5;
+
+color:#f0f0f0;
+
 border:1px solid #c0c0c0;
-background:linear-gradient(145deg,#555,#999);
+
+background:linear-gradient(145deg,#8c8c8c,#d9d9d9);
+
+text-shadow:0 0 4px #fff;
+
 }
 
 /* GOLD */
 
 .gold{
+
 color:#ffd700;
+
 border:1px solid #ffd700;
-background:#1a1a1a;
-box-shadow:0 0 15px #ffd700;
+
+background:#111;
+
+box-shadow:0 0 12px #ffd700;
+
 }
 
 /* PLATINUM */
 
 .platinum{
-color:#d6c8ff;
+
+color:#e6d9ff;
+
 border:1px solid #a56cff;
-background:#1a1a1a;
-box-shadow:0 0 20px #7d4cff;
+
+background:#111;
+
+box-shadow:0 0 16px #7d4cff;
+
+}
+
+/* HOVER */
+
+.vip-box:hover{
+
+transform:scale(1.08);
+
 }
 
 /* WITHDRAW */
@@ -336,10 +377,17 @@ M7 JENIS PERMAINAN M7
 
 <h2>M7 VIP CLUB</h2>
 
-<div class="vip-box classic">CLASSIC</div>
-<div class="vip-box silver">SILVER</div>
-<div class="vip-box gold">GOLD</div>
-<div class="vip-box platinum">PLATINUM</div>
+<div class="vip-container">
+
+<div class="vip-box classic">🥉 CLASSIC</div>
+
+<div class="vip-box silver">🥈 SILVER</div>
+
+<div class="vip-box gold">🥇 GOLD</div>
+
+<div class="vip-box platinum">💎 PLATINUM</div>
+
+</div>
 
 </div>
 
@@ -434,5 +482,6 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
+
 
 

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ms">
 
 <head>
@@ -19,50 +20,53 @@ margin:0;
 }
 
 .container{
-
 max-width:400px;
 margin:auto;
 padding:40px 20px;
-
 }
 
 h1{
 color:#d4af37;
 }
 
-input{
-
+input,select{
 width:100%;
 padding:12px;
 margin:10px 0;
-
 border-radius:6px;
 border:none;
-
 background:#1a1a1a;
 color:white;
-
 font-size:16px;
+}
 
+.phone-row{
+display:flex;
+gap:10px;
+}
+
+.phone-row select{
+width:35%;
+}
+
+.phone-row input{
+width:65%;
 }
 
 button{
-
 width:100%;
 padding:15px;
-
 background:#d4af37;
 border:none;
-
 font-weight:bold;
 font-size:16px;
-
 border-radius:6px;
-
 margin-top:15px;
-
 cursor:pointer;
+}
 
+button:hover{
+opacity:0.9;
 }
 
 </style>
@@ -75,11 +79,55 @@ cursor:pointer;
 
 <h1>M7 REGISTER</h1>
 
-<input id="phone" placeholder="NOMBOR TELEFON">
+<!-- NOMBOR FON -->
 
-<input id="bank" placeholder="BANK">
-  
+<div class="phone-row">
+
+<select id="code">
+
+<option value="+60">🇲🇾 +60</option>
+<option value="+65">🇸🇬 +65</option>
+<option value="+62">🇮🇩 +62</option>
+<option value="+66">🇹🇭 +66</option>
+
+</select>
+
+<input id="phone" placeholder="NOMBOR FON">
+
+</div>
+
+<!-- BANK -->
+
+<select id="bank">
+
+<option value="">PILIH BANK</option>
+
+<option>AEON BANK</option>
+<option>AFFIN BANK</option>
+<option>AMBANK</option>
+<option>BANK ISLAM</option>
+<option>BANK RAKYAT</option>
+<option>BIGPAY</option>
+<option>BOOST</option>
+<option>BOOST BANK</option>
+<option>BSN</option>
+<option>CIMB</option>
+<option>GX BANK</option>
+<option>HONG LEONG</option>
+<option>MAYBANK</option>
+<option>OCBC</option>
+<option>PUBLIC BANK</option>
+<option>RHB</option>
+<option>TOUCH N GO</option>
+<option>UOB</option>
+
+</select>
+
+<!-- NAMA AKAUN -->
+
 <input id="name" placeholder="NAMA AKAUN">
+
+<!-- AKAUN BANK -->
 
 <input id="acc" placeholder="AKAUN BANK">
 
@@ -91,17 +139,37 @@ cursor:pointer;
 
 function send(){
 
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
+let phone=document.getElementById("phone").value.trim();
+let code=document.getElementById("code").value;
+
 let bank=document.getElementById("bank").value;
-let acc=document.getElementById("acc").value;
+let name=document.getElementById("name").value.trim();
+let acc=document.getElementById("acc").value.trim();
+
+/* 检查 */
+
+if(phone=="" || bank=="" || name=="" || acc==""){
+
+alert("Sila isi semua maklumat");
+
+return;
+
+}
+
+/* 去掉手机号前面的0 */
+
+if(phone.startsWith("0")){
+phone=phone.substring(1);
+}
+
+let fullPhone=code+phone;
 
 let message =
 "NEW M7 MEMBER REGISTER%0A%0A"+
-"NAME: "+name+"%0A"+
-"PHONE: "+phone+"%0A"+
+"NOMBOR FON: "+fullPhone+"%0A"+
 "BANK: "+bank+"%0A"+
-"BANK ACC: "+acc;
+"NAMA AKAUN: "+name+"%0A"+
+"AKAUN BANK: "+acc;
 
 let url="https://wa.me/601139467029?text="+message;
 

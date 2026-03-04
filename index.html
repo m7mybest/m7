@@ -386,11 +386,9 @@ let seconds = (now - startTime) / 1000;
 /* 每秒平均增长 */
 
 let base = startAmount + seconds * 0.45;
-
 /* 随机增加 0.01 - 0.99 */
 
-let randomAdd = Math.random() * (0.99 - 0.01) + 0.01;
-
+let randomAdd = Math.random() * (0.008 - 0.001) + 0.001;
 let jackpot = base + randomAdd;
 
 /* 千位逗号 */
@@ -412,4 +410,5 @@ updateJackpot();
 
 </body>
 </html>
+
 

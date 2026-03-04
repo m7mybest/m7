@@ -31,13 +31,13 @@ width:100%;
 height:100%;
 pointer-events:none;
 overflow:hidden;
-z-index:0;
+z-index:-1;
 }
 
 .coin{
 position:absolute;
 width:32px;
-opacity:0.9;
+opacity:0.8;
 animation:btcFall linear infinite;
 }
 
@@ -61,13 +61,6 @@ transform:translateY(110vh) rotate(720deg) translateX(-30px);
 opacity:0;
 }
 
-}
-
-/* 页面层级 */
-
-body > *{
-position:relative;
-z-index:2;
 }
 
 /* LOGO */
@@ -152,33 +145,46 @@ padding:70px;
 
 .vip-box{
 display:inline-block;
-background:#151515;
-padding:25px;
+padding:25px 40px;
 margin:10px;
-border-radius:10px;
+border-radius:12px;
 font-weight:bold;
+font-size:18px;
+transition:0.3s;
 }
 
-/* VIP COLORS */
+/* CLASSIC */
 
 .classic{
-color:white;
-border:1px solid white;
+color:#bfbfbf;
+border:1px solid #888;
+background:#1a1a1a;
 }
+
+/* SILVER */
 
 .silver{
-color:#c0c0c0;
+color:#e5e5e5;
 border:1px solid #c0c0c0;
+background:linear-gradient(145deg,#555,#999);
 }
+
+/* GOLD */
 
 .gold{
-color:#d4af37;
-border:1px solid #d4af37;
+color:#ffd700;
+border:1px solid #ffd700;
+background:#1a1a1a;
+box-shadow:0 0 15px #ffd700;
 }
 
+/* PLATINUM */
+
 .platinum{
-color:#e5e4e2;
-border:1px solid #e5e4e2;
+color:#d6c8ff;
+border:1px solid #a56cff;
+background:#1a1a1a;
+box-shadow:0 0 20px #7d4cff;
 }
 
 /* WITHDRAW */
@@ -305,6 +311,8 @@ color:#aaa;
 
 <h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
 
+<p>Sehingga RM100</p>
+
 <a class="btn" href="#">TUNTUT BONUS</a>
 
 </div>
@@ -372,7 +380,7 @@ WhatsApp
 
 <script>
 
-/* Jackpot 假同步 */
+/* Jackpot */
 
 const startAmount = 0;
 const startTime = new Date("2026-03-01T00:00:00").getTime();
@@ -381,8 +389,6 @@ function updateJackpot(){
 
 let now = new Date().getTime();
 let seconds = (now - startTime) / 1000;
-
-/* 每天≈增长300 */
 
 let base = startAmount + seconds * 0.0035;
 
@@ -404,7 +410,7 @@ updateJackpot();
 
 /* BTC 掉落 */
 
-for(let i=0;i<25;i++){
+for(let i=0;i<12;i++){
 
 let coin=document.createElement("img");
 
@@ -423,4 +429,3 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
-

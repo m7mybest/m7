@@ -10,17 +10,6 @@
 
 <style>
 
-.mega-logo{
-width:90px;
-height:70px;
-object-fit:contain;
-}
-
-  .provider:hover img{
-transform:scale(1.1);
-transition:0.3s;
-}
-  
 /* BODY */
 
 body{
@@ -66,7 +55,7 @@ box-shadow:0 0 15px #d4af37;
 display:inline-block;
 }
 
-/* SLOT SHOWCASE */
+/* SLOT */
 
 .slot{
 padding:60px 20px;
@@ -117,6 +106,29 @@ background:#151515;
 padding:25px;
 margin:10px;
 border-radius:10px;
+font-weight:bold;
+}
+
+/* VIP COLORS */
+
+.classic{
+color:white;
+border:1px solid white;
+}
+
+.silver{
+color:#c0c0c0;
+border:1px solid #c0c0c0;
+}
+
+.gold{
+color:#d4af37;
+border:1px solid #d4af37;
+}
+
+.platinum{
+color:#e5e4e2;
+border:1px solid #e5e4e2;
 }
 
 /* WITHDRAW */
@@ -126,7 +138,7 @@ background:#111;
 padding:40px;
 }
 
-/* GAME PROVIDERS */
+/* PROVIDERS */
 
 .providers{
 padding:70px;
@@ -161,6 +173,19 @@ filter:brightness(1.1) contrast(1.1);
 box-shadow:0 0 15px #d4af37;
 transform:scale(1.05);
 transition:0.3s;
+}
+
+.provider:hover img{
+transform:scale(1.1);
+transition:0.3s;
+}
+
+/* MEGA LOGO */
+
+.mega-logo{
+width:90px;
+height:70px;
+object-fit:contain;
 }
 
 /* WHATSAPP */
@@ -207,12 +232,12 @@ color:#aaa;
 
 <a class="btn" href="https://wa.me/601139467029">DAFTAR SEKARANG</a>
 
-<a class="btn" href="https://wa.me/601161921272">MANAGMENT M7</a>
+<a class="btn" href="https://wa.me/601161921272">MANAGEMENT M7</a>
 
 </div>
 
 <div class="slot">
-777 JENIS PERMAINNAN 777
+777 JENIS PERMAINAN 777
 </div>
 
 <div class="games">
@@ -221,7 +246,6 @@ color:#aaa;
 <div class="game">🃏 LIVE CASINO</div>
 <div class="game">⚽ SPORTS</div>
 <div class="game">🐟 FISHING</div>
-
 
 </div>
 
@@ -251,21 +275,18 @@ color:#aaa;
 
 <h2>M7 VIP CLUB</h2>
 
-<div class="vip-box">CLASSIC</div>
-<div class="vip-box">SLIVER</div>
-<div class="vip-box">GOLD</div>
-<div class="vip-box">PLATINUM</div>
+<div class="vip-box classic">CLASSIC</div>
+<div class="vip-box silver">SILVER</div>
+<div class="vip-box gold">GOLD</div>
+<div class="vip-box platinum">PLATINUM</div>
 
 </div>
 
 <div class="withdraw">
 
-<h2>BAUCAR PENGELUARAN</h2>
+<h2>KOMUNITY</h2>
 
-<p>Ahmad berjaya mengeluarkan RM1850 ✔</p>
-<p>Jason berjaya mengeluarkan RM780 ✔</p>
-<p>Lim berjaya mengeluarkan RM2100 ✔</p>
-<p>Ali berjaya mengeluarkan RM950 ✔</p>
+<a class="btn" href="https://whatsapp.com/channel/0029VbArBSN7IUYd8VQvS61S">CHANNEL</a>
 
 </div>
 
@@ -346,19 +367,21 @@ WhatsApp
 
 <script>
 
-/* JACKPOT 滚动 */
+/* JACKPOT 自动增长 */
 
 setInterval(function(){
 
 let el=document.getElementById("jackpot");
 
-let num=parseInt(el.innerText.replace("RM",""));
+let num=parseFloat(el.innerText.replace("RM",""));
 
-num=num+Math.floor(Math.random()*50);
+let increase=Math.random()*(5.89-2.01)+2.01;
 
-el.innerText="RM "+num;
+num=num+increase;
 
-},3000);
+el.innerText="RM "+num.toFixed(2);
+
+},1000);
 
 /* 玩家中奖提示 */
 
@@ -381,14 +404,3 @@ alert("Tahniah! "+w);
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 <head>
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>M7 Entertainment</title>
+<title>M7 Premium Casino</title>
 
 <style>
 
@@ -14,81 +15,137 @@ font-family:Arial;
 background:#0b0b0b;
 color:white;
 text-align:center;
+overflow-x:hidden;
 }
 
+/* LOGO */
+
+.logo{
+background:black;
+padding:15px;
+font-size:26px;
+color:#d4af37;
+font-weight:bold;
+}
+
+/* HEADER */
+
 .header{
-padding:70px 20px;
+padding:120px 20px;
 background:linear-gradient(180deg,#000,#111);
 }
 
-.logo{
-font-size:42px;
-color:gold;
-font-weight:bold;
+.header h1{
+font-size:52px;
+color:#d4af37;
 }
 
 .btn{
-background:gold;
+background:#d4af37;
 color:black;
-padding:14px 35px;
+padding:15px 35px;
 border-radius:6px;
 text-decoration:none;
-display:inline-block;
-margin:10px;
 font-weight:bold;
-}
-
-/* 滚动中奖 */
-
-.winner{
-background:#111;
-padding:10px;
-overflow:hidden;
-}
-
-.winner span{
+margin:10px;
+box-shadow:0 0 15px #d4af37;
 display:inline-block;
-padding-left:100%;
-animation:scroll 12s linear infinite;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
+/* SLOT SHOWCASE */
+
+.slot{
+padding:60px 20px;
+background:#111;
+font-size:40px;
 }
 
-/* 游戏 */
+/* GAMES */
 
 .games{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
-padding:40px;
+padding:50px;
 }
 
 .game{
-background:#1b1b1b;
-padding:20px;
+background:#151515;
+padding:25px;
 width:150px;
 border-radius:10px;
 }
 
-/* bonus */
+/* BONUS */
 
 .bonus{
+padding:70px;
 background:linear-gradient(90deg,#000,#3a2a00);
-padding:60px 20px;
 }
+
+/* JACKPOT */
+
+.jackpot h1{
+font-size:60px;
+color:#d4af37;
+}
+
+/* VIP */
+
+.vip{
+padding:70px;
+}
+
+.vip-box{
+display:inline-block;
+background:#151515;
+padding:25px;
+margin:10px;
+border-radius:10px;
+}
+
+/* WITHDRAW */
+
+.withdraw{
+background:#111;
+padding:40px;
+}
+
+/* PROVIDERS */
+
+.providers{
+padding:70px;
+}
+
+.provider{
+display:inline-block;
+background:#151515;
+padding:20px;
+margin:10px;
+border-radius:10px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
 
 .footer{
 background:#111;
-padding:30px;
-}
-
-.online{
-color:#00ff90;
-margin-top:10px;
+padding:40px;
+color:#aaa;
 }
 
 </style>
@@ -97,87 +154,143 @@ margin-top:10px;
 
 <body>
 
+<div class="logo">
+M7 PREMIUM CASINO
+</div>
+
 <div class="header">
 
-<div class="logo">
-M7
-</div>
+<h1>M7 PREMIUM CASINO</h1>
 
-<h2>马来西亚顶级娱乐平台</h2>
+<p>Platform Casino Online No.1 Malaysia</p>
 
-<p>安全 · 快速提款 · 高额奖金</p>
+<p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 
-<a class="btn" href="#">立即注册</a>
+<a class="btn" href="#">DAFTAR SEKARANG</a>
 
-<a class="btn" href="https://wa.me/60123456789">
-WhatsApp客服
-</a>
-
-<div class="online">
-👥 当前在线玩家：1287
-</div>
+<a class="btn" href="https://wa.me/60123456789">VIP SUPPORT</a>
 
 </div>
 
-<div class="winner">
-
-<span>
-🎉 Ahmad 赢得 RM1280 | Jason 赢得 RM560 | Lim 赢得 RM2200 | Ali 赢得 RM870 | Kumar 赢得 RM1400
-</span>
-
+<div class="slot">
+🎰 777 JACKPOT 777 🎰
 </div>
 
 <div class="games">
 
-<div class="game">🎰 Slot</div>
-<div class="game">🃏 Live Casino</div>
-<div class="game">⚽ Sports</div>
-<div class="game">🐟 Fishing</div>
-<div class="game">🎲 Lottery</div>
+<div class="game">🎰 SLOT</div>
+<div class="game">🃏 LIVE CASINO</div>
+<div class="game">⚽ SPORTS</div>
+<div class="game">🐟 FISHING</div>
+<div class="game">🎲 LOTTERY</div>
 
 </div>
 
 <div class="bonus">
 
-<h2 style="color:gold;">
-100% Welcome Bonus
-</h2>
+<h2>WELCOME BONUS</h2>
 
-<p>
-新玩家首存最高 RM1000
-</p>
+<h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
+
+<p>Sehingga RM1000</p>
+
+<a class="btn" href="#">TUNTUT BONUS</a>
 
 </div>
 
-<div style="padding:60px;">
+<div class="jackpot">
 
-<h2>
-30秒快速注册
-</h2>
+<h2>MEGA JACKPOT</h2>
 
-<p>
-马上加入 M7 开始赢钱
-</p>
+<h1 id="jackpot">RM 2358920</h1>
 
-<a class="btn" href="#">
-开始游戏
-</a>
+<p>Pemenang seterusnya mungkin ANDA!</p>
+
+</div>
+
+<div class="vip">
+
+<h2>VIP CLUB</h2>
+
+<div class="vip-box">VIP 1</div>
+<div class="vip-box">VIP 2</div>
+<div class="vip-box">VIP 3</div>
+<div class="vip-box">VIP 4</div>
+<div class="vip-box">VIP 5</div>
+
+</div>
+
+<div class="withdraw">
+
+<h2>PENGELUARAN TERKINI</h2>
+
+<p>Ahmad berjaya mengeluarkan RM1850 ✔</p>
+<p>Jason berjaya mengeluarkan RM780 ✔</p>
+<p>Lim berjaya mengeluarkan RM2100 ✔</p>
+<p>Ali berjaya mengeluarkan RM950 ✔</p>
+
+</div>
+
+<div class="providers">
+
+<h2>GAME PROVIDERS</h2>
+
+<div class="provider">PG</div>
+<div class="provider">JILI</div>
+<div class="provider">PRAGMATIC</div>
+<div class="provider">EVO</div>
+<div class="provider">PLAYTECH</div>
 
 </div>
 
 <div class="footer">
 
-<p>M7 Entertainment © 2026</p>
+M7 Premium Casino © 2026
 
-<p>
+<p>Platform permainan selamat</p>
+<p>Pengeluaran pantas</p>
+<p>Sokongan pelanggan 24/7</p>
 
-<a href="https://wa.me/60123456789" style="color:gold;">
+</div>
+
+<a class="whatsapp" href="https://wa.me/60123456789">
 WhatsApp
 </a>
 
-</p>
+<script>
 
-</div>
+/* JACKPOT 滚动 */
+
+setInterval(function(){
+
+let el=document.getElementById("jackpot");
+
+let num=parseInt(el.innerText.replace("RM",""));
+
+num=num+Math.floor(Math.random()*50);
+
+el.innerText="RM "+num;
+
+},3000);
+
+/* 玩家中奖提示 */
+
+setInterval(function(){
+
+let wins=[
+"Jason menang RM1280 di SLOT",
+"Ahmad menang RM950 di LIVE CASINO",
+"Lim menang RM2100 di PRAGMATIC",
+"Kumar menang RM780 di JILI"
+];
+
+let w=wins[Math.floor(Math.random()*wins.length)];
+
+alert("Tahniah! "+w);
+
+},20000);
+
+</script>
 
 </body>
 </html>

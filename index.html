@@ -21,6 +21,55 @@ text-align:center;
 overflow-x:hidden;
 }
 
+/* BTC 背景 */
+
+.coins{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+
+.coin{
+position:absolute;
+width:32px;
+opacity:0.9;
+animation:btcFall linear infinite;
+}
+
+@keyframes btcFall{
+
+0%{
+transform:translateY(-120px) rotate(0deg) translateX(0px);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+50%{
+transform:translateY(50vh) rotate(360deg) translateX(30px);
+}
+
+100%{
+transform:translateY(110vh) rotate(720deg) translateX(-30px);
+opacity:0;
+}
+
+}
+
+/* 页面层级 */
+
+body > *{
+position:relative;
+z-index:2;
+}
+
 /* LOGO */
 
 .logo{
@@ -91,7 +140,8 @@ background:linear-gradient(90deg,#000,#3a2a00);
 
 .jackpot h1{
 font-size:60px;
-color:#d4af37;
+color:#ffd700;
+text-shadow:0 0 10px gold,0 0 20px gold;
 }
 
 /* VIP */
@@ -216,6 +266,8 @@ color:#aaa;
 
 <body>
 
+<div class="coins" id="coins"></div>
+
 <div class="logo">
 <img src="logo.png" width="180">
 </div>
@@ -230,9 +282,7 @@ color:#aaa;
 
 <p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 
-<a class="btn" href="https://wa.me/601139467029">DAFTAR SEKARANG</a>
-
-<a class="btn" href="https://wa.me/601161921272">MANAGEMENT M7</a>
+<a class="btn" href="https://wa.me/601139467029">DAFTAR SEKARANG</a> <a class="btn" href="https://wa.me/601161921272">MANAGEMENT M7</a>
 
 </div>
 
@@ -324,33 +374,23 @@ WhatsApp
 
 <script>
 
-/* 初始金额 */
+/* Jackpot 假同步 */
 
 const startAmount = 0;
-
-/* 起始时间 */
-
 const startTime = new Date("2026-03-01T00:00:00").getTime();
-
-/* 更新 Jackpot */
 
 function updateJackpot(){
 
 let now = new Date().getTime();
-
 let seconds = (now - startTime) / 1000;
 
-/* 每秒增长 ≈ RM300/天 */
+/* 每天≈增长300 */
 
 let base = startAmount + seconds * 0.0035;
-
-/* 随机增加 */
 
 let randomAdd = Math.random() * (0.008 - 0.001) + 0.001;
 
 let jackpot = base + randomAdd;
-
-/* 千位逗号 */
 
 let formatted = jackpot.toLocaleString("en-MY",{
 minimumFractionDigits:2,
@@ -362,8 +402,24 @@ document.getElementById("jackpot").innerText = "RM " + formatted;
 }
 
 setInterval(updateJackpot,1000);
-
 updateJackpot();
+
+/* BTC 掉落 */
+
+for(let i=0;i<25;i++){
+
+let coin=document.createElement("img");
+
+coin.src="btc.png";
+coin.className="coin";
+
+coin.style.left=Math.random()*100+"%";
+coin.style.animationDuration=(Math.random()*6+6)+"s";
+coin.style.width=(Math.random()*20+30)+"px";
+
+document.getElementById("coins").appendChild(coin);
+
+}
 
 </script>
 

@@ -21,7 +21,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* BTC 背景 */
+/* BTC BACKGROUND */
 
 .coins{
 position:fixed;
@@ -230,9 +230,7 @@ box-shadow:0 0 16px #7d4cff;
 /* HOVER */
 
 .vip-box:hover{
-
 transform:scale(1.08);
-
 }
 
 /* WITHDRAW */
@@ -292,18 +290,67 @@ height:70px;
 object-fit:contain;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
 
 .whatsapp{
+
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+z-index:999;
+
+animation:waFloat 2.5s ease-in-out infinite;
+
+}
+
+.whatsapp img{
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+box-shadow:0 0 15px #25D366;
+
+}
+
+.wa-text{
+
 background:#25D366;
 color:white;
-padding:15px 20px;
-border-radius:40px;
-text-decoration:none;
+
+padding:8px 14px;
+
+border-radius:20px;
+
+font-size:14px;
 font-weight:bold;
+
+box-shadow:0 0 10px #25D366;
+
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes waFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
 }
 
 /* FOOTER */
@@ -380,11 +427,8 @@ M7 JENIS PERMAINAN M7
 <div class="vip-container">
 
 <div class="vip-box classic">CLASSIC</div>
-
 <div class="vip-box silver">SILVER</div>
-
 <div class="vip-box gold">GOLD</div>
-
 <div class="vip-box platinum">PLATINUM</div>
 
 </div>
@@ -427,13 +471,19 @@ M7 Play © 2026
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/601111872729">
-WhatsApp
+<a class="whatsapp" href="https://wa.me/601111872729" target="_blank">
+
+<img src="whatsapp.png">
+
+<div class="wa-text">
+🟢 24/7 LIVE SUPPORT
+</div>
+
 </a>
 
 <script>
 
-/* Jackpot */
+/* JACKPOT */
 
 const startAmount = 0;
 const startTime = new Date("2026-03-01T00:00:00").getTime();
@@ -445,7 +495,7 @@ let seconds = (now - startTime) / 1000;
 
 let base = startAmount + seconds * 0.0035;
 
-let randomAdd = Math.random() * (0.008 - 0.001) + 0.001;
+let randomAdd = Math.random() * (0.004 - 0.001) + 0.001;
 
 let jackpot = base + randomAdd;
 
@@ -461,9 +511,9 @@ document.getElementById("jackpot").innerText = "RM " + formatted;
 setInterval(updateJackpot,1000);
 updateJackpot();
 
-/* BTC 掉落 */
+/* BTC FALL */
 
-for(let i=0;i<12;i++){
+for(let i=0;i<18;i++){
 
 let coin=document.createElement("img");
 
@@ -471,7 +521,8 @@ coin.src="btc.png";
 coin.className="coin";
 
 coin.style.left=Math.random()*100+"%";
-coin.style.animationDuration=(Math.random()*6+6)+"s";
+coin.style.animationDuration=(Math.random()*6+8)+"s";
+coin.style.animationDelay=(Math.random()*5)+"s";
 coin.style.width=(Math.random()*20+30)+"px";
 
 document.getElementById("coins").appendChild(coin);
@@ -482,8 +533,3 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
-
-
-
-
-

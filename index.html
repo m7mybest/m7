@@ -294,60 +294,17 @@ color:#aaa;
 
 <h2>GAME PROVIDERS</h2>
 
-<div class="provider">
-<img src="918.png">
-<p>918KISS</p>
-</div>
-
-<div class="provider">
-<img src="ace333.png">
-<p>ACE333</p>
-</div>
-
-<div class="provider">
-<img src="joker.png">
-<p>JOKER</p>
-</div>
-
-<div class="provider">
-<img src="king855.png">
-<p>KING855</p>
-</div>
-
-<div class="provider">
-<img src="live22.png">
-<p>LIVE22</p>
-</div>
-
-<div class="provider">
-<img src="lucky365.png">
-<p>LUCKY365</p>
-</div>
-
-<div class="provider">
-<img src="mega.png" class="mega-logo">
-<p>MEGA888</p>
-</div>
-
-<div class="provider">
-<img src="ntc.png">
-<p>NEWTOWN(NTC)</p>
-</div>
-
-<div class="provider">
-<img src="pussy.png">
-<p>PUSSY</p>
-</div>
-
-<div class="provider">
-<img src="rollex.png">
-<p>ROLLEX</p>
-</div>
-
-<div class="provider">
-<img src="suncity.png">
-<p>SUNCITY</p>
-</div>
+<div class="provider"><img src="918.png"><p>918KISS</p></div>
+<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
+<div class="provider"><img src="joker.png"><p>JOKER</p></div>
+<div class="provider"><img src="king855.png"><p>KING855</p></div>
+<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
+<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+<div class="provider"><img src="mega.png" class="mega-logo"><p>MEGA888</p></div>
+<div class="provider"><img src="ntc.png"><p>NEWTOWN(NTC)</p></div>
+<div class="provider"><img src="pussy.png"><p>PUSSY</p></div>
+<div class="provider"><img src="rollex.png"><p>ROLLEX</p></div>
+<div class="provider"><img src="suncity.png"><p>SUNCITY</p></div>
 
 </div>
 
@@ -369,7 +326,7 @@ WhatsApp
 
 /* 初始金额 */
 
-const startAmount = 0 ;
+const startAmount = 0;
 
 /* 起始时间 */
 
@@ -383,12 +340,14 @@ let now = new Date().getTime();
 
 let seconds = (now - startTime) / 1000;
 
-/* 每秒平均增长 */
+/* 每秒增长 ≈ RM300/天 */
 
-let base = startAmount + seconds * 0.45;
-/* 随机增加 0.01 - 0.99 */
+let base = startAmount + seconds * 0.0035;
+
+/* 随机增加 */
 
 let randomAdd = Math.random() * (0.008 - 0.001) + 0.001;
+
 let jackpot = base + randomAdd;
 
 /* 千位逗号 */
@@ -410,5 +369,3 @@ updateJackpot();
 
 </body>
 </html>
-
-

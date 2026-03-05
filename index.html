@@ -42,10 +42,12 @@ animation:btcFall linear infinite;
 }
 
 @keyframes btcFall{
+
 0%{transform:translateY(-120px) rotate(0deg);opacity:0;}
 10%{opacity:1;}
 50%{transform:translateY(50vh) rotate(360deg);}
 100%{transform:translateY(110vh) rotate(720deg);opacity:0;}
+
 }
 
 /* LOGO */
@@ -140,7 +142,7 @@ color:#2ecc71;
 text-shadow:0 0 8px #2ecc71;
 }
 
-/* VIP CLUB */
+/* VIP */
 
 .vip{
 padding:80px 20px;
@@ -196,6 +198,44 @@ box-shadow:0 0 16px #7d4cff;
 
 .vip-box:hover{
 transform:scale(1.08);
+}
+
+/* ABOUT */
+
+.about{
+padding:80px 20px;
+background:#111;
+max-width:900px;
+margin:auto;
+line-height:1.8;
+}
+
+.about h2{
+color:#d4af37;
+font-size:34px;
+margin-bottom:25px;
+}
+
+.about h3{
+color:#ffd700;
+margin-top:40px;
+}
+
+.about p{
+color:#ccc;
+font-size:16px;
+}
+
+.about ul{
+list-style:none;
+padding:0;
+margin-top:20px;
+}
+
+.about li{
+margin:10px 0;
+font-size:16px;
+color:#ddd;
 }
 
 /* PROVIDERS */
@@ -324,7 +364,6 @@ M7 JENIS PERMAINAN M7
 <div class="bonus">
 
 <h2>WELCOME BONUS</h2>
-
 <h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
 
 <a class="btn">TUNTUT BONUS</a>
@@ -358,6 +397,37 @@ M7 JENIS PERMAINAN M7
 <div class="vip-box platinum">PLATINUM</div>
 
 </div>
+
+</div>
+
+<div class="about">
+
+<h2>Tentang M7 Play</h2>
+
+<p>M7 Play ditubuhkan pada tahun 2021 dan kini telah berkembang selama lebih 5 tahun sebagai salah satu platform hiburan dalam talian yang dipercayai oleh para pemain.</p>
+
+<p>Dengan kerjasama pelbagai penyedia permainan terkemuka, M7 Play menawarkan pelbagai pilihan permainan yang menarik dan berkualiti tinggi.</p>
+
+<h3>Vision</h3>
+<p>Menjadi platform hiburan dalam talian yang dipercayai dan menjadi pilihan utama pemain di rantau ini.</p>
+
+<h3>Mission</h3>
+
+<ul>
+<li>✔ Menyediakan pengalaman permainan yang selamat</li>
+<li>✔ Sentiasa menambah baik teknologi platform</li>
+<li>✔ Membina hubungan jangka panjang dengan pemain</li>
+</ul>
+
+<h3>Mengapa Pilih M7 Play</h3>
+
+<ul>
+<li>✔ Platform selamat dan stabil</li>
+<li>✔ Pelbagai permainan daripada penyedia terkemuka</li>
+<li>✔ Proses transaksi pantas</li>
+<li>✔ Khidmat pelanggan profesional 24 jam</li>
+<li>✔ Promosi menarik untuk pemain</li>
+</ul>
 
 </div>
 
@@ -401,8 +471,6 @@ M7 Play © 2026
 
 <script>
 
-/* JACKPOT SYSTEM */
-
 const startTime = new Date("2026-03-01T00:00:00").getTime();
 
 const megaStart = 15000;
@@ -436,12 +504,9 @@ document.getElementById("minor").innerText =
 setInterval(updateJackpots,1000);
 updateJackpots();
 
-/* BTC FALL */
-
 for(let i=0;i<18;i++){
 
 let coin=document.createElement("img");
-
 coin.src="btc.png";
 coin.className="coin";
 

@@ -10,43 +10,25 @@
 
 <style>
 
-/* LANGUAGE */
-
-.language-switch{
-position:absolute;
-top:20px;
-right:25px;
-display:flex;
-gap:12px;
-font-size:14px;
-align-items:center;
-z-index:999;
-}
-
-.language-switch span{
-background:#111;
-padding:5px 10px;
-border-radius:6px;
-cursor:pointer;
-}
-
-.language-switch span:hover{
-background:#d4af37;
-color:black;
-}
-
 /* REGISTER BUTTON ANIMATION */
 
 .btn{
 animation:btnPulse 2s infinite;
+background:#d4af37;
+color:black;
+padding:15px 35px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:10px;
+box-shadow:0 0 15px #d4af37;
+display:inline-block;
 }
 
 @keyframes btnPulse{
 
 0%{transform:scale(1);box-shadow:0 0 10px #d4af37;}
-
 50%{transform:scale(1.08);box-shadow:0 0 25px #ffd700;}
-
 100%{transform:scale(1);box-shadow:0 0 10px #d4af37;}
 
 }
@@ -107,21 +89,6 @@ background:linear-gradient(180deg,#000,#111);
 .header h1{
 font-size:52px;
 color:#d4af37;
-margin:10px 0;
-}
-
-/* BUTTON */
-
-.btn{
-background:#d4af37;
-color:black;
-padding:15px 35px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-margin:10px;
-box-shadow:0 0 15px #d4af37;
-display:inline-block;
 }
 
 /* SLOT */
@@ -237,31 +204,23 @@ cursor:pointer;
 }
 
 .classic{
-color:#bfbfbf;
 border:1px solid #777;
-background:linear-gradient(145deg,#1b1b1b,#0d0d0d);
+background:#1b1b1b;
 }
 
 .silver{
-color:#fff;
 border:1px solid #c0c0c0;
-background:linear-gradient(145deg,#8c8c8c,#d9d9d9);
+background:#8c8c8c;
 }
 
 .gold{
-color:#ffd700;
 border:1px solid #ffd700;
 box-shadow:0 0 12px #ffd700;
 }
 
 .platinum{
-color:#e6d9ff;
 border:1px solid #a56cff;
 box-shadow:0 0 16px #7d4cff;
-}
-
-.vip-box:hover{
-transform:scale(1.08);
 }
 
 /* ABOUT */
@@ -277,10 +236,25 @@ line-height:1.8;
 .about h2{
 color:#d4af37;
 font-size:34px;
+margin-bottom:30px;
+}
+
+.about h3{
+color:#ffd700;
+margin-top:40px;
 }
 
 .about p{
 color:#ccc;
+}
+
+.about ul{
+list-style:none;
+padding:0;
+}
+
+.about li{
+margin:10px 0;
 }
 
 /* PROVIDERS */
@@ -329,12 +303,6 @@ object-fit:contain;
 margin-bottom:8px;
 }
 
-.provider:hover{
-transform:scale(1.08);
-box-shadow:0 0 15px #d4af37;
-transition:0.3s;
-}
-
 /* WHATSAPP */
 
 .whatsapp{
@@ -377,16 +345,6 @@ color:#aaa;
 
 <body>
 
-<div class="language-switch">
-
-🌐 Language
-
-<span onclick="setLang('ms')">🇲🇾 Bahasa</span>
-<span onclick="setLang('zh')">🇨🇳 中文</span>
-<span onclick="setLang('en')">🇬🇧 English</span>
-
-</div>
-
 <div class="coins" id="coins"></div>
 
 <div class="logo">
@@ -399,13 +357,13 @@ color:#aaa;
 
 <h1>M7 Play</h1>
 
-<p id="slogan">MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
+<p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 
 <a class="btn" href="register.html">DAFTAR SEKARANG</a>
 
 </div>
 
-<div class="slot" id="gamesTitle">
+<div class="slot">
 M7 JENIS PERMAINAN M7
 </div>
 
@@ -442,7 +400,7 @@ M7 JENIS PERMAINAN M7
 
 <div class="bonus">
 
-<h2 id="bonusTitle">WELCOME BONUS</h2>
+<h2>WELCOME BONUS</h2>
 <h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
 
 </div>
@@ -479,31 +437,41 @@ M7 JENIS PERMAINAN M7
 
 <h2>Tentang M7 Play</h2>
 
-<p>M7 Play ditubuhkan pada tahun 2021 dan kini telah berkembang sebagai platform hiburan dalam talian yang dipercayai.</p>
+<p>M7 Play ditubuhkan pada tahun 2021 dan kini telah berkembang selama lebih 5 tahun sebagai salah satu platform hiburan dalam talian yang dipercayai oleh para pemain.</p>
 
-</div>
+<p>Sejak awal penubuhannya, M7 Play sentiasa memberi tumpuan kepada pengalaman pemain dengan menyediakan platform yang selamat, stabil dan adil.</p>
 
-<div class="providers">
+<p>Dengan kerjasama pelbagai penyedia permainan terkemuka, M7 Play menawarkan pelbagai pilihan permainan yang menarik dan berkualiti tinggi.</p>
 
-<h2>GAME PROVIDERS</h2>
+<p>Platform ini juga sentiasa dipertingkatkan dari segi teknologi dan sistem bagi memastikan setiap pemain dapat menikmati pengalaman permainan yang lancar dan selesa.</p>
 
-<div class="provider-track">
+<h3>Vision</h3>
 
-<div class="provider"><img src="918.png"><p>918KISS</p></div>
-<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
-<div class="provider"><img src="joker.png"><p>JOKER</p></div>
-<div class="provider"><img src="king855.png"><p>KING855</p></div>
-<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
-<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+<p>Menjadi platform hiburan dalam talian yang dipercayai dan menjadi pilihan utama pemain di rantau ini.</p>
 
-<div class="provider"><img src="918.png"><p>918KISS</p></div>
-<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
-<div class="provider"><img src="joker.png"><p>JOKER</p></div>
-<div class="provider"><img src="king855.png"><p>KING855</p></div>
-<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
-<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+<h3>Mission</h3>
 
-</div>
+<ul>
+
+<li>Menyediakan pengalaman permainan yang selamat, stabil dan berkualiti tinggi kepada semua pemain.</li>
+
+<li>Sentiasa menambah baik teknologi platform dan mutu perkhidmatan.</li>
+
+<li>Membina hubungan jangka panjang dengan pemain melalui kepercayaan, integriti dan inovasi.</li>
+
+</ul>
+
+<h3>Mengapa Pilih M7 Play</h3>
+
+<ul>
+
+<li>✔ Platform selamat dan stabil</li>
+<li>✔ Pelbagai permainan daripada penyedia terkemuka</li>
+<li>✔ Proses transaksi yang pantas dan mudah</li>
+<li>✔ Khidmat pelanggan profesional 24 jam</li>
+<li>✔ Promosi dan ganjaran menarik untuk pemain</li>
+
+</ul>
 
 </div>
 
@@ -527,81 +495,36 @@ M7 Play © 2026
 
 <script>
 
-/* LANGUAGE SYSTEM */
-
-const langText={
-
-ms:{
-games:"M7 JENIS PERMAINAN M7",
-bonus:"WELCOME BONUS"
-},
-
-en:{
-games:"M7 GAME TYPES",
-bonus:"WELCOME BONUS"
-},
-
-zh:{
-games:"M7 游戏类型",
-bonus:"欢迎奖金"
-}
-
-};
-
-function setLang(lang){
-
-document.getElementById("gamesTitle").innerText=langText[lang].games;
-document.getElementById("bonusTitle").innerText=langText[lang].bonus;
-
-}
-
-let userLang=navigator.language;
-
-if(userLang.startsWith("zh")){setLang("zh");}
-else if(userLang.startsWith("en")){setLang("en");}
-else{setLang("ms");}
-
 /* JACKPOT */
 
-const startTime=new Date("2026-03-01T00:00:00").getTime();
-
-const megaStart=15000;
-const majorStart=5000;
-const minorStart=1500;
-
-const megaRate=700/86400;
-const majorRate=450/86400;
-const minorRate=180/86400;
+const startTime=new Date("2026-03-01").getTime();
 
 function updateJackpots(){
 
-let now=new Date().getTime();
-let seconds=(now-startTime)/1000;
+let seconds=(Date.now()-startTime)/1000;
 
-let mega=megaStart+seconds*megaRate;
-let major=majorStart+seconds*majorRate;
-let minor=minorStart+seconds*minorRate;
+let mega=15000+seconds*(700/86400);
+let major=5000+seconds*(450/86400);
+let minor=1500+seconds*(180/86400);
 
-document.getElementById("mega").innerText="RM "+mega.toLocaleString("en-MY",{minimumFractionDigits:2});
-document.getElementById("major").innerText="RM "+major.toLocaleString("en-MY",{minimumFractionDigits:2});
-document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{minimumFractionDigits:2});
+document.getElementById("mega").innerText="RM "+mega.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+document.getElementById("major").innerText="RM "+major.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 }
 
 setInterval(updateJackpots,1000);
-updateJackpots();
-
-/* BTC BACKGROUND */
 
 for(let i=0;i<15;i++){
 
 let coin=document.createElement("img");
+
 coin.src="btc.png";
+
 coin.className="coin";
 
 coin.style.left=Math.random()*100+"%";
 coin.style.animationDuration=(Math.random()*6+8)+"s";
-coin.style.width=(Math.random()*20+30)+"px";
 
 document.getElementById("coins").appendChild(coin);
 

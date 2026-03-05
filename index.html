@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="ms">
+
 <head>
 
 <meta charset="UTF-8">
@@ -21,52 +21,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* LANGUAGE MENU */
-
-.language-menu{
-position:absolute;
-top:20px;
-right:20px;
-z-index:20;
-}
-
-.lang-btn{
-background:#111;
-border:1px solid #d4af37;
-color:#d4af37;
-padding:8px 14px;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.lang-dropdown{
-display:none;
-position:absolute;
-right:0;
-margin-top:5px;
-background:#111;
-border:1px solid #d4af37;
-border-radius:6px;
-overflow:hidden;
-min-width:150px;
-}
-
-.lang-dropdown div{
-padding:10px;
-cursor:pointer;
-border-bottom:1px solid #333;
-}
-
-.lang-dropdown div:hover{
-background:#d4af37;
-color:black;
-}
-
-.language-menu:hover .lang-dropdown{
-display:block;
-}
-
 /* BTC BACKGROUND */
 
 .coins{
@@ -76,7 +30,6 @@ left:0;
 width:100%;
 height:100%;
 pointer-events:none;
-overflow:hidden;
 z-index:-1;
 }
 
@@ -108,7 +61,6 @@ padding:15px;
 .header{
 padding:120px 20px;
 background:linear-gradient(180deg,#000,#111);
-position:relative;
 }
 
 .header h1{
@@ -213,7 +165,6 @@ font-weight:bold;
 font-size:20px;
 border-radius:14px;
 transition:0.35s;
-letter-spacing:1px;
 cursor:pointer;
 }
 
@@ -224,7 +175,7 @@ background:linear-gradient(145deg,#1b1b1b,#0d0d0d);
 }
 
 .silver{
-color:#f0f0f0;
+color:#fff;
 border:1px solid #c0c0c0;
 background:linear-gradient(145deg,#8c8c8c,#d9d9d9);
 }
@@ -232,14 +183,12 @@ background:linear-gradient(145deg,#8c8c8c,#d9d9d9);
 .gold{
 color:#ffd700;
 border:1px solid #ffd700;
-background:#111;
 box-shadow:0 0 12px #ffd700;
 }
 
 .platinum{
 color:#e6d9ff;
 border:1px solid #a56cff;
-background:#111;
 box-shadow:0 0 16px #7d4cff;
 }
 
@@ -257,49 +206,72 @@ margin:auto;
 line-height:1.8;
 }
 
-/* PROVIDERS */
+.about h2{
+color:#d4af37;
+font-size:34px;
+}
+
+.about p{
+color:#ccc;
+}
+
+/* PROVIDERS CAROUSEL */
 
 .providers{
 padding:70px 0;
 overflow:hidden;
-background:#000;
 }
 
 .provider-track{
 display:flex;
-gap:25px;
+gap:30px;
 width:max-content;
-animation:scrollProviders 30s linear infinite;
+animation:providerScroll 25s linear infinite;
 }
 
 .providers:hover .provider-track{
 animation-play-state:paused;
 }
 
-@keyframes scrollProviders{
+@keyframes providerScroll{
+
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
+
 }
 
 .provider{
+
 background:#000;
-padding:15px;
+padding:20px;
+
+width:150px;
+height:120px;
+
 border-radius:12px;
-width:130px;
-height:100px;
+
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+
 border:1px solid #d4af37;
+
 flex-shrink:0;
+
 }
 
 .provider img{
 width:90px;
-height:55px;
+height:60px;
 object-fit:contain;
-margin-bottom:6px;
+margin-bottom:8px;
+}
+
+.provider:hover{
+transform:scale(1.08);
+box-shadow:0 0 15px #d4af37;
+transition:0.3s;
 }
 
 /* WHATSAPP */
@@ -312,7 +284,6 @@ display:flex;
 align-items:center;
 gap:10px;
 z-index:999;
-animation:waFloat 2.5s infinite;
 }
 
 .whatsapp img{
@@ -329,12 +300,6 @@ padding:8px 14px;
 border-radius:20px;
 font-size:14px;
 font-weight:bold;
-}
-
-@keyframes waFloat{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
 }
 
 /* FOOTER */
@@ -359,36 +324,93 @@ color:#aaa;
 
 <div class="header">
 
-<div class="language-menu">
-
-<button class="lang-btn">🌐 Language</button>
-
-<div class="lang-dropdown">
-<div onclick="setLang('ms')">🇲🇾 Bahasa</div>
-<div onclick="setLang('zh')">🇨🇳 中文</div>
-<div onclick="setLang('en')">🇬🇧 English</div>
-</div>
-
-</div>
-
 <img src="banner.png" style="width:100%;max-width:900px;border-radius:12px;">
 
-<h1 id="title">M7 Play</h1>
+<h1>M7 Play</h1>
 
-<p id="slogan">MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
+<p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 
-<a class="btn" id="registerBtn" href="register.html">DAFTAR SEKARANG</a>
+<a class="btn" href="register.html">DAFTAR SEKARANG</a>
 
 </div>
 
-<div class="slot" id="gamesTitle">
+<div class="slot">
 M7 JENIS PERMAINAN M7
+</div>
+
+<div class="games">
+
+<div class="game">🎰 SLOT</div>
+<div class="game">🃏 LIVE CASINO</div>
+<div class="game">⚽ SPORTS</div>
+<div class="game">🐟 FISHING</div>
+
 </div>
 
 <div class="bonus">
 
-<h2 id="bonusTitle">WELCOME BONUS</h2>
+<h2>WELCOME BONUS</h2>
 <h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
+
+</div>
+
+<div class="jackpot">
+
+<h2>MEGA JACKPOT</h2>
+<h1 class="mega" id="mega">RM 15,000.00</h1>
+
+<h2>MAJOR JACKPOT</h2>
+<h1 class="major" id="major">RM 5,000.00</h1>
+
+<h2>MINOR JACKPOT</h2>
+<h1 class="minor" id="minor">RM 1,500.00</h1>
+
+</div>
+
+<div class="vip">
+
+<h2>M7 VIP CLUB</h2>
+
+<div class="vip-container">
+
+<div class="vip-box classic">CLASSIC</div>
+<div class="vip-box silver">SILVER</div>
+<div class="vip-box gold">GOLD</div>
+<div class="vip-box platinum">PLATINUM</div>
+
+</div>
+
+</div>
+
+<div class="about">
+
+<h2>Tentang M7 Play</h2>
+
+<p>M7 Play ditubuhkan pada tahun 2021 dan kini telah berkembang sebagai platform hiburan dalam talian yang dipercayai.</p>
+
+</div>
+
+<div class="providers">
+
+<h2>GAME PROVIDERS</h2>
+
+<div class="provider-track">
+
+<div class="provider"><img src="918.png"><p>918KISS</p></div>
+<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
+<div class="provider"><img src="joker.png"><p>JOKER</p></div>
+<div class="provider"><img src="king855.png"><p>KING855</p></div>
+<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
+<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+
+<div class="provider"><img src="918.png"><p>918KISS</p></div>
+<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
+<div class="provider"><img src="joker.png"><p>JOKER</p></div>
+<div class="provider"><img src="king855.png"><p>KING855</p></div>
+<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
+<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+
+</div>
 
 </div>
 
@@ -397,79 +419,71 @@ M7 JENIS PERMAINAN M7
 M7 Play © 2026
 
 <p>Platform permainan selamat</p>
-<p>Pengeluaran pantas</p>
-<p>Sokongan pelanggan 24/7</p>
 
 </div>
 
+<a class="whatsapp" href="https://wa.me/601111872729">
+
+<img src="whatsapp.png">
+
+<div class="wa-text">
+🟢 24/7 LIVE SUPPORT
+</div>
+
+</a>
+
 <script>
 
-/* LANGUAGE SYSTEM */
+/* JACKPOT */
 
-const lang = {
+const startTime = new Date("2026-03-01T00:00:00").getTime();
 
-ms:{
-title:"M7 Play",
-slogan:"MENANG BESAR • MAIN BESAR • HIDUP MEWAH",
-register:"DAFTAR SEKARANG",
-games:"M7 JENIS PERMAINAN M7",
-bonus:"WELCOME BONUS"
-},
+const megaStart = 15000;
+const majorStart = 5000;
+const minorStart = 1500;
 
-zh:{
-title:"M7 娱乐平台",
-slogan:"大奖不断 • 娱乐无限 • 尊贵体验",
-register:"立即注册",
-games:"M7 游戏类型",
-bonus:"欢迎奖金"
-},
+const megaRate = 700 / 86400;
+const majorRate = 450 / 86400;
+const minorRate = 180 / 86400;
 
-en:{
-title:"M7 Play",
-slogan:"BIG WIN • BIG PLAY • LUXURY LIFE",
-register:"REGISTER NOW",
-games:"M7 GAME TYPES",
-bonus:"WELCOME BONUS"
-}
+function updateJackpots(){
 
-}
+let now = new Date().getTime();
+let seconds = (now - startTime) / 1000;
 
-function setLang(l){
+let mega = megaStart + seconds * megaRate;
+let major = majorStart + seconds * majorRate;
+let minor = minorStart + seconds * minorRate;
 
-localStorage.setItem("lang",l)
+document.getElementById("mega").innerText =
+"RM " + mega.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
-document.getElementById("title").innerText = lang[l].title
-document.getElementById("slogan").innerText = lang[l].slogan
-document.getElementById("registerBtn").innerText = lang[l].register
-document.getElementById("gamesTitle").innerText = lang[l].games
-document.getElementById("bonusTitle").innerText = lang[l].bonus
+document.getElementById("major").innerText =
+"RM " + major.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+document.getElementById("minor").innerText =
+"RM " + minor.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 
 }
 
-function detectLanguage(){
+setInterval(updateJackpots,1000);
+updateJackpots();
 
-let saved = localStorage.getItem("lang")
+/* BTC background */
 
-if(saved){
-setLang(saved)
-return
-}
+for(let i=0;i<15;i++){
 
-let browserLang = navigator.language.toLowerCase()
+let coin=document.createElement("img");
+coin.src="btc.png";
+coin.className="coin";
 
-if(browserLang.includes("zh")){
-setLang("zh")
-}
-else if(browserLang.includes("ms") || browserLang.includes("id")){
-setLang("ms")
-}
-else{
-setLang("en")
-}
+coin.style.left=Math.random()*100+"%";
+coin.style.animationDuration=(Math.random()*6+8)+"s";
+coin.style.width=(Math.random()*20+30)+"px";
+
+document.getElementById("coins").appendChild(coin);
 
 }
-
-window.onload = detectLanguage
 
 </script>
 

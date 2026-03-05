@@ -321,6 +321,8 @@ display:flex;
 align-items:center;
 gap:10px;
 z-index:999;
+
+animation:waPulse 2s infinite;
 }
 
 .whatsapp img{
@@ -337,6 +339,12 @@ padding:8px 14px;
 border-radius:20px;
 font-size:14px;
 font-weight:bold;
+}
+
+@keyframes waPulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
 }
 
 /* FOOTER */

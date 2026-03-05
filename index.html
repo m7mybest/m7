@@ -68,7 +68,7 @@ color:#d4af37;
 }
 
 .header img{
-margin-top:-30px;
+margin-top:10px;
 box-shadow:0 0 25px #d4af37;
 }
 
@@ -347,6 +347,44 @@ padding:40px;
 color:#aaa;
 }
 
+.language{
+position:absolute;
+top:20px;
+right:20px;
+font-size:14px;
+z-index:999;
+}
+
+.lang-current{
+background:#111;
+border:1px solid #444;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.lang-menu{
+display:none;
+background:#111;
+border:1px solid #444;
+margin-top:5px;
+border-radius:6px;
+overflow:hidden;
+}
+
+.lang-menu div{
+padding:6px 12px;
+cursor:pointer;
+}
+
+.lang-menu div:hover{
+background:#333;
+}
+
+.lang{
+display:none;
+}
+
 </style>
 
 </head>
@@ -357,6 +395,22 @@ color:#aaa;
 
 <div class="logo">
 <img src="logo.png" width="180">
+</div>
+
+<div class="language">
+
+<div class="lang-current" onclick="toggleLang()">
+🌐 <span id="currentLang">Language</span>
+</div>
+
+<div class="lang-menu">
+
+<div onclick="setLang('bm')">🇲🇾 BM</div>
+<div onclick="setLang('en')">🇬🇧 EN</div>
+<div onclick="setLang('cn')">🇨🇳 中文</div>
+
+</div>
+
 </div>
 
 <div class="header">
@@ -377,10 +431,10 @@ JENIS PERMAINAN M7
 
 <div class="games">
 
-<div class="game">SLOT</div>
-<div class="game">LIVE CASINO</div>
-<div class="game">SPORTS</div>
-<div class="game">FISHING</div>
+<div class="game">🎰 SLOT</div>
+<div class="game">🃏 LIVE CASINO</div>
+<div class="game">⚽ SPORTS</div>
+<div class="game">🐟 FISHING</div>
 
 </div>
 
@@ -611,11 +665,9 @@ document.getElementById("coins").appendChild(coin);
 
 }
 
+function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.style.display==="block"){ menu.style.display="none"; }else{ menu.style.display="block"; } } function setLang(lang){ document.querySelectorAll(".lang").forEach(el=>{ el.style.display="none"; }); document.querySelectorAll("." + lang).forEach(el=>{ el.style.display="block"; }); localStorage.setItem("lang",lang); if(lang==="bm"){document.getElementById("currentLang").innerText="BM";} if(lang==="en"){document.getElementById("currentLang").innerText="EN";} if(lang==="cn"){document.getElementById("currentLang").innerText="中文";} } function detectLang(){ let saved=localStorage.getItem("lang"); if(saved){ setLang(saved); return; } let lang=navigator.language; if(lang.includes("zh")){setLang("cn");} else if(lang.includes("ms")){setLang("bm");} else{setLang("en");} } detectLang();
+
 </script>
 
 </body>
 </html>
-
-
-
-

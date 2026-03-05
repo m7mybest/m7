@@ -311,9 +311,66 @@ color:#d4af37;
 font-weight:bold;
 }
 
+/* COMMUNITY */
+
+.community{
+padding:80px 20px;
+background:#0f0f0f;
+text-align:center;
+}
+
+.community h2{
+color:#ffd700;
+font-size:34px;
+margin-bottom:40px;
+}
+
+.community-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.social{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:210px;
+height:60px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+transition:0.3s;
+font-size:16px;
+}
+
+.social img{
+width:26px;
+height:26px;
+}
+
+.social:hover{
+transform:scale(1.08);
+}
+
+.social.whatsapp{
+background:#25D366;
+}
+
+.facebook{
+background:#1877F2;
+}
+
+.instagram{
+background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);
+}
+
 /* WHATSAPP */
 
-.whatsapp{
+.whatsapp-float{
 position:fixed;
 bottom:25px;
 right:25px;
@@ -321,7 +378,6 @@ display:flex;
 align-items:center;
 gap:10px;
 z-index:999;
-
 animation:waPulse 2s infinite;
 }
 
@@ -624,7 +680,49 @@ display:none;
 <div class="vip-box platinum">PLATINUM</div>
 
 </div>
+</div>
 
+<div class="community">
+
+<h2>
+<span class="lang bm">KOMUNITI M7</span>
+<span class="lang en">M7 COMMUNITY</span>
+<span class="lang cn">M7 社区</span>
+</h2>
+
+<div class="community-box">
+
+<a href="https://wa.me/601111872729" target="_blank" class="social whatsapp">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+
+<span class="lang bm">WhatsApp</span>
+<span class="lang en">WhatsApp</span>
+<span class="lang cn">WhatsApp</span>
+
+</a>
+
+<a href="https://facebook.com/YOURPAGE" target="_blank" class="social facebook">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+
+<span class="lang bm">Facebook</span>
+<span class="lang en">Facebook</span>
+<span class="lang cn">Facebook</span>
+
+</a>
+
+<a href="https://instagram.com/YOURPAGE" target="_blank" class="social instagram">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+
+<span class="lang bm">Instagram</span>
+<span class="lang en">Instagram</span>
+<span class="lang cn">Instagram</span>
+
+</a>
+
+</div>
 </div>
 
 <div class="about">
@@ -769,7 +867,7 @@ M7 Play © 2026
 </div>
 
 
-<a class="whatsapp" href="https://wa.me/601111872729"target="_blank">
+<a class="whatsapp-float" href="https://wa.me/601111872729" target="_blank">
 
 <img src="whatsapp.png">
 

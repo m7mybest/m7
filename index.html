@@ -238,46 +238,7 @@ font-size:16px;
 color:#ddd;
 }
 
-/* PROVIDERS */
-
-.providers{
-padding:70px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
-
-.provider{
-background:#000;
-padding:20px;
-border-radius:12px;
-width:150px;
-display:flex;
-flex-direction:column;
-align-items:center;
-border:1px solid #d4af37;
-}
-
-.provider img{
-max-width:100px;
-margin-bottom:8px;
-background:#000;
-padding:8px;
-border-radius:6px;
-filter:brightness(1.1) contrast(1.1);
-}
-
-.provider:hover{
-box-shadow:0 0 15px #d4af37;
-transform:scale(1.05);
-transition:0.3s;
-}
-
-.provider:hover img{
-transform:scale(1.1);
-transition:0.3s;
-}
+Provider 自动滑动 Carousel
 
 /* WHATSAPP */
 
@@ -435,6 +396,8 @@ M7 JENIS PERMAINAN M7
 
 <h2>GAME PROVIDERS</h2>
 
+<div class="provider-track">
+
 <div class="provider"><img src="918.png"><p>918KISS</p></div>
 <div class="provider"><img src="ace333.png"><p>ACE333</p></div>
 <div class="provider"><img src="joker.png"><p>JOKER</p></div>
@@ -447,6 +410,21 @@ M7 JENIS PERMAINAN M7
 <div class="provider"><img src="rollex.png"><p>ROLLEX</p></div>
 <div class="provider"><img src="suncity.png"><p>SUNCITY</p></div>
 
+<!-- 复制一遍用于无限滚动 -->
+
+<div class="provider"><img src="918.png"><p>918KISS</p></div>
+<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
+<div class="provider"><img src="joker.png"><p>JOKER</p></div>
+<div class="provider"><img src="king855.png"><p>KING855</p></div>
+<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
+<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
+<div class="provider"><img src="mega.png"><p>MEGA888</p></div>
+<div class="provider"><img src="ntc.png"><p>NEWTOWN</p></div>
+<div class="provider"><img src="pussy.png"><p>PUSSY</p></div>
+<div class="provider"><img src="rollex.png"><p>ROLLEX</p></div>
+<div class="provider"><img src="suncity.png"><p>SUNCITY</p></div>
+
+</div>
 </div>
 
 <div class="footer">
@@ -523,3 +501,4 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
+

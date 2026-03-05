@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ms">
 
 <head>
@@ -69,6 +68,10 @@ button:hover{
 opacity:0.9;
 }
 
+.lang{
+display:none;
+}
+
 </style>
 
 </head>
@@ -77,9 +80,15 @@ opacity:0.9;
 
 <div class="container">
 
-<h1>M7 REGISTER</h1>
+<h1>
 
-<!-- NOMBOR FON -->
+<span class="lang bm">M7 REGISTER</span>
+<span class="lang en">M7 REGISTER</span>
+<span class="lang cn">M7 注册</span>
+
+</h1>
+
+<!-- PHONE -->
 
 <div class="phone-row">
 
@@ -92,7 +101,15 @@ opacity:0.9;
 
 </select>
 
-<input id="phone" placeholder="NOMBOR FON">
+<input id="phone"
+
+data-bm="NOMBOR FON"
+data-en="PHONE NUMBER"
+data-cn="手机号码"
+
+placeholder="NOMBOR FON"
+
+>
 
 </div>
 
@@ -100,7 +117,11 @@ opacity:0.9;
 
 <select id="bank">
 
-<option value="">PILIH BANK</option>
+<option value=""
+data-bm="PILIH BANK"
+data-en="SELECT BANK"
+data-cn="选择银行"
+>PILIH BANK</option>
 
 <option>AEON BANK</option>
 <option>AFFIN BANK</option>
@@ -123,19 +144,86 @@ opacity:0.9;
 
 </select>
 
-<!-- NAMA AKAUN -->
+<!-- NAME -->
 
-<input id="name" placeholder="NAMA AKAUN">
+<input id="name"
 
-<!-- AKAUN BANK -->
+data-bm="NAMA AKAUN"
+data-en="ACCOUNT NAME"
+data-cn="账户姓名"
 
-<input id="acc" placeholder="AKAUN NOMBOR">
+placeholder="NAMA AKAUN"
 
-<button onclick="send()">TERUSKAN</button>
+>
+
+<!-- ACCOUNT -->
+
+<input id="acc"
+
+data-bm="AKAUN NOMBOR"
+data-en="BANK ACCOUNT"
+data-cn="银行账号"
+
+placeholder="AKAUN NOMBOR"
+
+>
+
+<button onclick="send()">
+
+<span class="lang bm">TERUSKAN</span>
+<span class="lang en">CONTINUE</span>
+<span class="lang cn">继续</span>
+
+</button>
 
 </div>
 
 <script>
+
+/* LANGUAGE */
+
+function setLang(lang){
+
+document.querySelectorAll(".lang").forEach(el=>{
+el.style.display="none";
+});
+
+document.querySelectorAll("." + lang).forEach(el=>{
+el.style.display="inline";
+});
+
+document.querySelectorAll("input").forEach(el=>{
+
+let text=el.getAttribute("data-"+lang);
+
+if(text){
+el.placeholder=text;
+}
+
+});
+
+document.querySelectorAll("option").forEach(el=>{
+
+let text=el.getAttribute("data-"+lang);
+
+if(text){
+el.textContent=text;
+}
+
+});
+
+}
+
+let saved=localStorage.getItem("lang");
+
+if(saved){
+setLang(saved);
+}else{
+setLang("bm");
+}
+
+
+/* REGISTER */
 
 function send(){
 
@@ -146,17 +234,13 @@ let bank=document.getElementById("bank").value;
 let name=document.getElementById("name").value.trim();
 let acc=document.getElementById("acc").value.trim();
 
-/* 检查 */
-
 if(phone=="" || bank=="" || name=="" || acc==""){
 
-alert("Sila isi semua maklumat");
+alert("Please fill all information");
 
 return;
 
 }
-
-/* 去掉手机号前面的0 */
 
 if(phone.startsWith("0")){
 phone=phone.substring(1);
@@ -166,10 +250,10 @@ let fullPhone=code+phone;
 
 let message =
 "NEW M7 MEMBER REGISTER%0A%0A"+
-"NOMBOR FON: "+fullPhone+"%0A"+
+"PHONE: "+fullPhone+"%0A"+
 "BANK: "+bank+"%0A"+
-"NAMA AKAUN: "+name+"%0A"+
-"AKAUN NOMBOR: "+acc;
+"ACCOUNT NAME: "+name+"%0A"+
+"ACCOUNT NUMBER: "+acc;
 
 let url="https://wa.me/601139467029?text="+message;
 

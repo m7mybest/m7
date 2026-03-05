@@ -36,7 +36,7 @@ z-index:0;
 .coin{
 position:absolute;
 width:32px;
-opacity:1;
+opacity:0.1;
 animation:btcFall linear infinite;
 }
 
@@ -52,19 +52,24 @@ animation:btcFall linear infinite;
 
 .logo{
 background:black;
-padding:15px;
+padding:10px 15px;
 }
 
 /* HEADER */
 
 .header{
-padding:120px 20px;
+padding:40px 20px 60px;
 background:linear-gradient(180deg,#000,#111);
 }
 
 .header h1{
 font-size:52px;
 color:#d4af37;
+}
+
+.header img{
+margin-top:15px;
+box-shadow:0 0 25px #d4af37;
 }
 
 /* REGISTER BUTTON */
@@ -610,4 +615,3 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
-

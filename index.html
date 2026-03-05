@@ -315,16 +315,33 @@ margin-top:30px;
 }
 
 .vip-box{
+
 width:190px;
 height:75px;
+
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:bold;
-font-size:20px;
+
 border-radius:14px;
-transition:0.35s;
-cursor:pointer;
+
+font-weight:bold;
+
+overflow:hidden;
+
+}
+
+/* VIP LOGO SIZE CONTROL */
+
+.vip-box img{
+
+width:40px;
+height:40px;
+
+object-fit:contain;
+
+margin-right:8px;
+
 }
 
 .classic{
@@ -734,6 +751,7 @@ document.getElementById("coins").appendChild(coin);
 
 </body>
 </html>
+
 
 
 

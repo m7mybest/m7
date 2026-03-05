@@ -21,6 +21,53 @@ text-align:center;
 overflow-x:hidden;
 }
 
+/* LANGUAGE */
+
+.language-switch{
+position:absolute;
+top:20px;
+right:25px;
+display:flex;
+gap:12px;
+font-size:14px;
+z-index:999;
+}
+
+.language-switch span{
+background:#111;
+padding:5px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.language-switch span:hover{
+background:#d4af37;
+color:black;
+}
+
+/* REGISTER BUTTON */
+
+.btn{
+background:#d4af37;
+color:black;
+padding:15px 35px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:10px;
+box-shadow:0 0 15px #d4af37;
+display:inline-block;
+animation:btnPulse 2s infinite;
+}
+
+@keyframes btnPulse{
+
+0%{transform:scale(1);box-shadow:0 0 10px #d4af37;}
+50%{transform:scale(1.08);box-shadow:0 0 25px #ffd700;}
+100%{transform:scale(1);box-shadow:0 0 10px #d4af37;}
+
+}
+
 /* BTC BACKGROUND */
 
 .coins{
@@ -66,21 +113,6 @@ background:linear-gradient(180deg,#000,#111);
 .header h1{
 font-size:52px;
 color:#d4af37;
-margin:10px 0;
-}
-
-/* BUTTON */
-
-.btn{
-background:#d4af37;
-color:black;
-padding:15px 35px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-margin:10px;
-box-shadow:0 0 15px #d4af37;
-display:inline-block;
 }
 
 /* SLOT */
@@ -108,6 +140,32 @@ width:150px;
 border-radius:10px;
 }
 
+/* HOT GAMES */
+
+.hotgames{
+padding:70px 20px;
+background:#0f0f0f;
+overflow:hidden;
+}
+
+.hot-track{
+display:flex;
+gap:20px;
+animation:hotScroll 20s linear infinite;
+}
+
+.hot-track img{
+width:180px;
+border-radius:10px;
+}
+
+@keyframes hotScroll{
+
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+
+}
+
 /* BONUS */
 
 .bonus{
@@ -121,25 +179,9 @@ background:linear-gradient(90deg,#000,#3a2a00);
 padding:60px 20px;
 }
 
-.jackpot h1{
-font-size:55px;
-margin:10px 0;
-}
-
-.mega{
-color:#ffd700;
-text-shadow:0 0 10px gold;
-}
-
-.major{
-color:#3ea6ff;
-text-shadow:0 0 8px #3ea6ff;
-}
-
-.minor{
-color:#2ecc71;
-text-shadow:0 0 8px #2ecc71;
-}
+.mega{color:#ffd700;}
+.major{color:#3ea6ff;}
+.minor{color:#2ecc71;}
 
 /* VIP */
 
@@ -150,9 +192,8 @@ padding:80px 20px;
 .vip-container{
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
 gap:25px;
-margin-top:30px;
+flex-wrap:wrap;
 }
 
 .vip-box{
@@ -161,40 +202,14 @@ height:75px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:bold;
-font-size:20px;
 border-radius:14px;
-transition:0.35s;
-cursor:pointer;
+font-weight:bold;
 }
 
-.classic{
-color:#bfbfbf;
-border:1px solid #777;
-background:linear-gradient(145deg,#1b1b1b,#0d0d0d);
-}
-
-.silver{
-color:#fff;
-border:1px solid #c0c0c0;
-background:linear-gradient(145deg,#8c8c8c,#d9d9d9);
-}
-
-.gold{
-color:#ffd700;
-border:1px solid #ffd700;
-box-shadow:0 0 12px #ffd700;
-}
-
-.platinum{
-color:#e6d9ff;
-border:1px solid #a56cff;
-box-shadow:0 0 16px #7d4cff;
-}
-
-.vip-box:hover{
-transform:scale(1.08);
-}
+.classic{border:1px solid #777;}
+.silver{border:1px solid #c0c0c0;}
+.gold{border:1px solid #ffd700;}
+.platinum{border:1px solid #a56cff;}
 
 /* ABOUT */
 
@@ -203,19 +218,9 @@ padding:80px 20px;
 background:#111;
 max-width:900px;
 margin:auto;
-line-height:1.8;
 }
 
-.about h2{
-color:#d4af37;
-font-size:34px;
-}
-
-.about p{
-color:#ccc;
-}
-
-/* PROVIDERS CAROUSEL */
+/* PROVIDERS */
 
 .providers{
 padding:70px 0;
@@ -229,49 +234,24 @@ width:max-content;
 animation:providerScroll 25s linear infinite;
 }
 
-.providers:hover .provider-track{
-animation-play-state:paused;
-}
-
 @keyframes providerScroll{
-
 0%{transform:translateX(0);}
 100%{transform:translateX(-50%);}
-
 }
 
 .provider{
-
 background:#000;
 padding:20px;
-
 width:150px;
-height:120px;
-
 border-radius:12px;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-
 border:1px solid #d4af37;
-
 flex-shrink:0;
-
 }
 
 .provider img{
 width:90px;
 height:60px;
 object-fit:contain;
-margin-bottom:8px;
-}
-
-.provider:hover{
-transform:scale(1.08);
-box-shadow:0 0 15px #d4af37;
-transition:0.3s;
 }
 
 /* WHATSAPP */
@@ -283,23 +263,17 @@ right:25px;
 display:flex;
 align-items:center;
 gap:10px;
-z-index:999;
 }
 
 .whatsapp img{
 width:60px;
-height:60px;
 border-radius:50%;
-box-shadow:0 0 15px #25D366;
 }
 
 .wa-text{
 background:#25D366;
-color:white;
 padding:8px 14px;
 border-radius:20px;
-font-size:14px;
-font-weight:bold;
 }
 
 /* FOOTER */
@@ -316,6 +290,12 @@ color:#aaa;
 
 <body>
 
+<div class="language-switch">
+<span onclick="setLang('ms')">🇲🇾</span>
+<span onclick="setLang('zh')">🇨🇳</span>
+<span onclick="setLang('en')">🇬🇧</span>
+</div>
+
 <div class="coins" id="coins"></div>
 
 <div class="logo">
@@ -328,29 +308,49 @@ color:#aaa;
 
 <h1>M7 Play</h1>
 
-<p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
+<p id="slogan">MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 
 <a class="btn" href="register.html">DAFTAR SEKARANG</a>
 
 </div>
 
-<div class="slot">
+<div class="slot" id="gamesTitle">
 M7 JENIS PERMAINAN M7
 </div>
 
 <div class="games">
-
 <div class="game">🎰 SLOT</div>
 <div class="game">🃏 LIVE CASINO</div>
 <div class="game">⚽ SPORTS</div>
 <div class="game">🐟 FISHING</div>
+</div>
+
+<div class="hotgames">
+
+<h2>🔥 HOT GAMES</h2>
+
+<div class="hot-track">
+
+<img src="slot1.png">
+<img src="slot2.png">
+<img src="slot3.png">
+<img src="slot4.png">
+<img src="slot5.png">
+
+<img src="slot1.png">
+<img src="slot2.png">
+<img src="slot3.png">
+<img src="slot4.png">
+<img src="slot5.png">
+
+</div>
 
 </div>
 
 <div class="bonus">
 
-<h2>WELCOME BONUS</h2>
-<h1 style="color:#d4af37;">100% BONUS DEPOSIT</h1>
+<h2 id="bonusTitle">WELCOME BONUS</h2>
+<h1>100% BONUS DEPOSIT</h1>
 
 </div>
 
@@ -386,90 +386,82 @@ M7 JENIS PERMAINAN M7
 
 <h2>Tentang M7 Play</h2>
 
-<p>M7 Play ditubuhkan pada tahun 2021 dan kini telah berkembang sebagai platform hiburan dalam talian yang dipercayai.</p>
-
-</div>
-
-<div class="providers">
-
-<h2>GAME PROVIDERS</h2>
-
-<div class="provider-track">
-
-<div class="provider"><img src="918.png"><p>918KISS</p></div>
-<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
-<div class="provider"><img src="joker.png"><p>JOKER</p></div>
-<div class="provider"><img src="king855.png"><p>KING855</p></div>
-<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
-<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
-
-<div class="provider"><img src="918.png"><p>918KISS</p></div>
-<div class="provider"><img src="ace333.png"><p>ACE333</p></div>
-<div class="provider"><img src="joker.png"><p>JOKER</p></div>
-<div class="provider"><img src="king855.png"><p>KING855</p></div>
-<div class="provider"><img src="live22.png"><p>LIVE22</p></div>
-<div class="provider"><img src="lucky365.png"><p>LUCKY365</p></div>
-
-</div>
+<p>M7 Play ditubuhkan pada tahun 2021...</p>
 
 </div>
 
 <div class="footer">
-
 M7 Play © 2026
-
-<p>Platform permainan selamat</p>
-
 </div>
 
 <a class="whatsapp" href="https://wa.me/601111872729">
-
 <img src="whatsapp.png">
-
-<div class="wa-text">
-🟢 24/7 LIVE SUPPORT
-</div>
-
+<div class="wa-text">🟢 24/7 LIVE SUPPORT</div>
 </a>
 
 <script>
 
+/* LANGUAGE */
+
+const text={
+
+ms:{
+slogan:"MENANG BESAR • MAIN BESAR • HIDUP MEWAH",
+games:"M7 JENIS PERMAINAN M7",
+bonus:"WELCOME BONUS"
+},
+
+en:{
+slogan:"WIN BIG • PLAY BIG • LIVE LUXURY",
+games:"M7 GAME TYPES",
+bonus:"WELCOME BONUS"
+},
+
+zh:{
+slogan:"大奖不断 • 畅玩不停 • 奢华人生",
+games:"M7 游戏类型",
+bonus:"欢迎奖金"
+}
+
+};
+
+function setLang(lang){
+
+document.getElementById("slogan").innerText=text[lang].slogan;
+document.getElementById("gamesTitle").innerText=text[lang].games;
+document.getElementById("bonusTitle").innerText=text[lang].bonus;
+
+}
+
+/* AUTO LANGUAGE */
+
+let userLang=navigator.language;
+
+if(userLang.startsWith("zh")) setLang("zh");
+else if(userLang.startsWith("en")) setLang("en");
+else setLang("ms");
+
 /* JACKPOT */
 
-const startTime = new Date("2026-03-01T00:00:00").getTime();
-
-const megaStart = 15000;
-const majorStart = 5000;
-const minorStart = 1500;
-
-const megaRate = 700 / 86400;
-const majorRate = 450 / 86400;
-const minorRate = 180 / 86400;
+const startTime=new Date("2026-03-01").getTime();
 
 function updateJackpots(){
 
-let now = new Date().getTime();
-let seconds = (now - startTime) / 1000;
+let seconds=(Date.now()-startTime)/1000;
 
-let mega = megaStart + seconds * megaRate;
-let major = majorStart + seconds * majorRate;
-let minor = minorStart + seconds * minorRate;
+let mega=15000+seconds*(700/86400);
+let major=5000+seconds*(450/86400);
+let minor=1500+seconds*(180/86400);
 
-document.getElementById("mega").innerText =
-"RM " + mega.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
-
-document.getElementById("major").innerText =
-"RM " + major.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
-
-document.getElementById("minor").innerText =
-"RM " + minor.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+document.getElementById("mega").innerText="RM "+mega.toLocaleString("en-MY",{minimumFractionDigits:2});
+document.getElementById("major").innerText="RM "+major.toLocaleString("en-MY",{minimumFractionDigits:2});
+document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{minimumFractionDigits:2});
 
 }
 
 setInterval(updateJackpots,1000);
-updateJackpots();
 
-/* BTC background */
+/* BTC */
 
 for(let i=0;i<15;i++){
 
@@ -479,7 +471,6 @@ coin.className="coin";
 
 coin.style.left=Math.random()*100+"%";
 coin.style.animationDuration=(Math.random()*6+8)+"s";
-coin.style.width=(Math.random()*20+30)+"px";
 
 document.getElementById("coins").appendChild(coin);
 

@@ -265,9 +265,9 @@ transform:scale(1.15);
 box-shadow:0 0 15px #ffd700;
 }
 
-.row1 .track{animation:scrollLeft 40s linear infinite}
-.row2 .track{animation:scrollRight 55s linear infinite}
-.row3 .track{animation:scrollLeft 70s linear infinite}
+.row1 .track{animation:scrollLeft 35s linear infinite}
+.row2 .track{animation:scrollRight 45s linear infinite}
+.row3 .track{animation:scrollLeft 55s linear infinite}
 
 @keyframes scrollLeft{
 0%{transform:translateX(0)}
@@ -693,15 +693,25 @@ user-select:none;
 /* M7 PLAY 标题 */
 
 .logo-title{
-font-size:52px;
+font-size:60px;
 font-weight:900;
-letter-spacing:6px;
+letter-spacing:8px;
 
-background:linear-gradient(90deg,#ffd700,#fff3a0,#ffd700);
+/* 金色渐变 */
+background:linear-gradient(
+90deg,
+#caa520,
+#ffd700,
+#fff3a0,
+#ffd700,
+#caa520
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-animation:logoFloat 4s ease-in-out infinite;
+/* 微浮动 */
+animation:logoFloat 5s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
@@ -1159,7 +1169,7 @@ document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{m
 }
 
 updateJackpots();
-setInterval(updateJackpots,100);
+setInterval(updateJackpots,50);
 
 /* BTC 随机掉落 */
 

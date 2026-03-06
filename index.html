@@ -34,18 +34,22 @@ z-index:0;
 }
 
 .coin{
-position:absolute;
-width:32px;
-opacity:0.1;
-animation:btcFall linear infinite;
-will-change:transform;
-}
 
 @keyframes btcFall{
 
-0%{transform:translateY(-120px) rotate(0deg);opacity:0;}
-10%{opacity:1;}
-100%{transform:translateY(110vh) rotate(720deg);opacity:0;}
+0%{
+transform:translateY(-150px) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:0.6;
+}
+
+100%{
+transform:translateY(110vh) rotate(720deg);
+opacity:0;
+}
 
 }
 
@@ -1066,18 +1070,45 @@ setInterval(updateJackpots,1000);
 
 /* BTC */
 
-for(let i=0;i<15;i++){
+function createCoin(){
 
 let coin=document.createElement("img");
 
 coin.src="btc.png";
 coin.className="coin";
 
+/* 随机位置 */
 coin.style.left=Math.random()*100+"%";
-coin.style.animationDuration=(Math.random()*6+8)+"s";
+
+/* 随机大小 */
+let size=Math.random()*25+20;
+coin.style.width=size+"px";
+
+/* 随机速度 */
+coin.style.animationDuration=(Math.random()*8+8)+"s";
+
+/* 随机延迟 */
+coin.style.animationDelay=(Math.random()*5)+"s";
 
 document.getElementById("coins").appendChild(coin);
 
+/* 掉完删除 */
+setTimeout(()=>{
+coin.remove();
+},15000);
+
+}
+
+/* 持续生成金币 */
+
+setInterval(()=>{
+createCoin();
+},800);
+
+/* 初始金币 */
+
+for(let i=0;i<10;i++){
+createCoin();
 }
 
 function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.style.display==="block"){ menu.style.display="none"; }else{ menu.style.display="block"; } } function setLang(lang){ document.querySelectorAll(".lang").forEach(el=>{ el.style.display="none"; }); document.querySelectorAll("." + lang).forEach(el=>{ el.style.display="block"; }); localStorage.setItem("lang",lang); if(lang==="bm"){document.getElementById("currentLang").innerText="BM";} if(lang==="en"){document.getElementById("currentLang").innerText="EN";} if(lang==="cn"){document.getElementById("currentLang").innerText="中文";} } function detectLang(){ let saved=localStorage.getItem("lang"); if(saved){ setLang(saved); return; } let lang=navigator.language; if(lang.includes("zh")){setLang("cn");} else if(lang.includes("ms")){setLang("bm");} else{setLang("en");} } detectLang();
@@ -1086,4 +1117,5 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
+
 

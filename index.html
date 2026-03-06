@@ -100,6 +100,24 @@ display:inline-block;
 padding:60px 20px;
 background:#111;
 font-size:40px;
+
+color:#ffd700;
+animation:goldGlow 3s infinite;
+}
+
+.slot::after{
+content:"";
+display:block;
+width:120px;
+height:3px;
+margin:15px auto 0;
+background:linear-gradient(90deg,transparent,#ffd700,transparent);
+}
+
+@keyframes goldGlow{
+0%{text-shadow:0 0 5px #ffd700}
+50%{text-shadow:0 0 20px #ffd700}
+100%{text-shadow:0 0 5px #ffd700}
 }
 
 /* GAMES */
@@ -113,10 +131,25 @@ padding:50px;
 }
 
 .game{
-background:#151515;
+background:linear-gradient(145deg,#1b1b1b,#000);
 padding:25px;
 width:150px;
-border-radius:10px;
+border-radius:12px;
+
+border:1px solid #d4af37;
+
+color:#ffd700;
+font-weight:bold;
+
+box-shadow:0 0 10px rgba(212,175,55,0.4);
+
+transition:0.3s;
+}
+
+.game:hover{
+transform:translateY(-6px) scale(1.05);
+box-shadow:0 0 25px #ffd700;
+background:linear-gradient(145deg,#000,#1a1a1a);
 }
 
 /* PROVIDERS CAROUSEL */
@@ -212,8 +245,11 @@ text-shadow:0 0 8px #2ecc71;
 
 /* VIP 放大 */
 
-.vip{
-padding:80px 20px;
+.vip h2{
+color:#ffd700;
+font-size:36px;
+text-shadow:0 0 15px #ffd700;
+letter-spacing:2px;
 }
 
 .vip-container{
@@ -1014,4 +1050,3 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
-

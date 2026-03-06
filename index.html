@@ -1387,6 +1387,14 @@ document.addEventListener("dragstart",function(e){
 e.preventDefault();
 });
 
+/* 检测 DevTools */
+setInterval(function(){
+
+if(window.outerHeight - window.innerHeight > 200){
+document.body.innerHTML="";
+}
+
+},1000);
 
 
 </script>

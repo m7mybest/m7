@@ -35,11 +35,9 @@ z-index:-1;
 
 .coin{
 position:absolute;
-will-change:transform;
 animation:btcFall linear infinite;
+will-change:transform;
 }
-
-/* 更真实掉落 */
 
 @keyframes btcFall{
 
@@ -52,20 +50,12 @@ opacity:0;
 opacity:1;
 }
 
-25%{
-transform:translateY(25vh) translateX(-30px) rotate(180deg);
-}
-
 50%{
 transform:translateY(50vh) translateX(40px) rotate(360deg);
 }
 
-75%{
-transform:translateY(80vh) translateX(-20px) rotate(540deg);
-}
-
 100%{
-transform:translateY(110vh) translateX(30px) rotate(720deg);
+transform:translateY(110vh) translateX(-40px) rotate(720deg);
 opacity:0;
 }
 
@@ -1128,7 +1118,7 @@ setInterval(updateJackpots,100);
 
 /* BTC 随机掉落 */
 
-for(let i=0;i<35;i++){
+for(let i=0;i<30;i++){
 
 let coin=document.createElement("img");
 
@@ -1138,25 +1128,22 @@ coin.className="coin";
 /* 随机位置 */
 coin.style.left=Math.random()*100+"%";
 
-/* 随机掉落速度 */
-coin.style.animationDuration=(Math.random()*10+12)+"s";
+/* 随机速度 */
+coin.style.animationDuration=(Math.random()*8+10)+"s";
 
-/* 随机延迟 */
-coin.style.animationDelay=Math.random()*12+"s";
+/* 随机延迟，让BTC不同步 */
+coin.style.animationDelay=Math.random()*10+"s";
 
-/* 随机大小（深度效果） */
-let size=(Math.random()*25+20);
-coin.style.width=size+"px";
+/* 随机大小 */
+coin.style.width=(Math.random()*20+25)+"px";
 
-/* 深度透明度 */
-coin.style.opacity=(Math.random()*0.4+0.1);
-
-/* 不同旋转速度 */
-coin.style.transform="rotate("+Math.random()*360+"deg+")";
+/* 随机透明度 */
+coin.style.opacity=(Math.random()*0.2+0.05);
 
 document.getElementById("coins").appendChild(coin);
 
 }
+
 function toggleLang(event){
 
 event.stopPropagation();
@@ -1262,6 +1249,7 @@ return false;
 
 };
 
+
 /* 禁止复制 */
 document.addEventListener("copy",function(e){
 e.preventDefault();
@@ -1281,8 +1269,6 @@ e.preventDefault();
 
 </body>
 </html>
-
-
 
 
 

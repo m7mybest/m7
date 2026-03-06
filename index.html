@@ -43,9 +43,23 @@ will-change:transform;
 
 @keyframes btcFall{
 
-0%{transform:translateY(-120px) rotate(0deg);opacity:0;}
-10%{opacity:1;}
-100%{transform:translateY(110vh) rotate(720deg);opacity:0;}
+0%{
+transform:translateY(-120px) translateX(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+50%{
+transform:translateY(50vh) translateX(40px) rotate(360deg);
+}
+
+100%{
+transform:translateY(110vh) translateX(-40px) rotate(720deg);
+opacity:0;
+}
 
 }
 
@@ -1066,7 +1080,7 @@ setInterval(updateJackpots,1000);
 
 /* BTC 随机掉落 */
 
-for(let i=0;i<20;i++){
+for(let i=0;i<30;i++){
 
 let coin=document.createElement("img");
 
@@ -1098,4 +1112,5 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
+
 

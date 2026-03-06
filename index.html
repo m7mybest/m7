@@ -102,6 +102,8 @@ margin-top:10px;
 box-shadow:
 0 0 25px #d4af37,
 0 0 50px rgba(212,175,55,0.5);
+
+pointer-events:none;
 }
 
 /* REGISTER BUTTON */
@@ -650,6 +652,20 @@ font-size:70px;
 }
 
 }
+
+/* 禁止拖图片 */
+.track img{
+user-drag:none;
+-webkit-user-drag:none;
+}
+
+/* 禁止选择文字 */
+body{
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+user-select:none;
+}
 </style>
 
 </head>
@@ -894,7 +910,7 @@ font-size:70px;
 
 <a href="https://wa.me/601111872729" target="_blank" class="social whatsapp">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+<img class="allow" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 
 <span class="lang bm">WhatsApp</span>
 <span class="lang en">WhatsApp</span>
@@ -1211,10 +1227,56 @@ menu.style.display="none";
 
 });
 
+/* 禁止右键 */
+document.addEventListener("contextmenu",function(e){
+e.preventDefault();
+});
+
+/* 禁止 F12 */
+document.onkeydown=function(e){
+
+if(e.keyCode==123){
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode==73){
+return false;
+}
+
+if(e.ctrlKey && e.keyCode==85){
+return false;
+}
+
+};
+
+setInterval(function(){
+
+if(window.outerHeight - window.innerHeight > 200){
+document.body.innerHTML="";
+}
+
+},1000);
+
+/* 禁止复制 */
+document.addEventListener("copy",function(e){
+e.preventDefault();
+});
+
+/* 禁止选中文字 */
+document.addEventListener("selectstart",function(e){
+e.preventDefault();
+});
+
+/* 禁止拖拽图片 */
+document.addEventListener("dragstart",function(e){
+e.preventDefault();
+});
+
 </script>
 
 </body>
 </html>
+
 
 
 

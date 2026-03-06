@@ -654,6 +654,10 @@ padding-top:70px;
 
 @media (min-width:1024px){
 
+.games{
+grid-template-columns:repeat(4,1fr);
+}
+
 .header{
 padding:40px 20px 60px;
 }
@@ -662,21 +666,15 @@ padding:40px 20px 60px;
 font-size:64px;
 }
 
-.slogan{
-font-size:28px;
-letter-spacing:4px;
-}
-
 }
 
 /* 游戏排版 */
 
 .games{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:1fr;
 gap:30px;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:50px 20px;
 }
@@ -1202,6 +1200,7 @@ M7 Play © 2026
 
 </body>
 </html>
+
 
 
 

@@ -35,8 +35,6 @@ z-index:-1;
 
 .coin{
 position:absolute;
-width:32px;
-opacity:0.1;
 animation:btcFall linear infinite;
 will-change:transform;
 }
@@ -73,6 +71,8 @@ padding:5px 15px 0px;
 /* HEADER */
 
 .header{
+position:relative;
+z-index:2;
 padding:40px 20px 60px;
 background:linear-gradient(180deg,#000,#111);
 }
@@ -105,6 +105,38 @@ box-shadow:0 0 25px #d4af37;
 /* REGISTER BUTTON */
 
 .btn{
+animation:btnPulse 2s infinite;
+background:#d4af37;
+color:black;
+padding:15px 35px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:10px;
+box-shadow:0 0 15px #d4af37;
+display:inline-block;
+
+position:relative;
+overflow:hidden;
+}
+
+.btn::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+animation:shine 4s infinite;
+}
+
+@keyframes shine{
+0%{left:-100%}
+60%{left:100%}
+100%{left:100%}
+}
+  
 animation:btnPulse 2s infinite;
 background:#d4af37;
 color:black;
@@ -1112,6 +1144,7 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
+
 
 
 

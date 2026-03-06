@@ -1387,20 +1387,28 @@ document.addEventListener("dragstart",function(e){
 e.preventDefault();
 });
 
-/* 检测 DevTools */
+let devtoolsOpen = false;
+
 setInterval(function(){
 
-if(window.outerHeight - window.innerHeight > 200){
+const widthDiff = window.outerWidth - window.innerWidth;
+const heightDiff = window.outerHeight - window.innerHeight;
+
+if(widthDiff > 160 || heightDiff > 160){
+devtoolsOpen = true;
+}
+
+if(devtoolsOpen){
 document.body.innerHTML="";
 }
 
-},1000);
-
+},500);
 
 </script>
 
 </body>
 </html>
+
 
 
 

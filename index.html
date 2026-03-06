@@ -473,30 +473,6 @@ padding:40px;
 color:#aaa;
 }
 
-  /* BANNER + LOGO CENTER */
-
-.banner-box{
-position:relative;
-max-width:900px;
-margin:auto;
-}
-
-.banner{
-width:100%;
-border-radius:12px;
-box-shadow:0 0 30px rgba(255,215,0,0.5);
-}
-
-.main-logo{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:160px;
-
-filter:drop-shadow(0 0 15px rgba(255,215,0,0.7));
-}
-
 .language{
 position:absolute;
 top:20px;
@@ -646,13 +622,7 @@ font-size:70px;
 
 <div class="header">
 
-<div class="banner-box">
-
-<img src="banner.png" class="banner">
-
-<img src="logo.png" class="main-logo">
-
-</div>
+<img src="banner.png" style="width:100%;max-width:900px;border-radius:12px;display:block;margin:auto;">
 
 <div class="lang bm">
 <p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
@@ -667,26 +637,6 @@ font-size:70px;
 <div class="lang cn">
 <p>大奖不断 • 尽情畅玩 • 尊贵体验</p>
 <a class="btn" href="register.html">立即注册</a>
-</div>
-
-</div>
-
-<div class="lang en">
-
-<img src="logo.png" class="main-logo">
-
-<p>WIN BIG • PLAY BIG • LIVE LUXURY</p>
-<a class="btn" href="register.html">REGISTER NOW</a>
-
-</div>
-
-<div class="lang cn">
-
-<img src="logo.png" class="main-logo">
-
-<p>大奖不断 • 尽情畅玩 • 尊贵体验</p>
-<a class="btn" href="register.html">立即注册</a>
-
 </div>
 
 </div>
@@ -1115,6 +1065,7 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
+
 
 
 

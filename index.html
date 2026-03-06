@@ -69,15 +69,8 @@ color:#d4af37;
 }
 
 .header img{
-box-shadow:0 0 30px rgba(255,215,0,0.5);
-}
-
-.main-logo{
-width:140px;
-margin:15px auto;
-display:block;
-
-filter:drop-shadow(0 0 12px rgba(255,215,0,0.6));
+margin-top:10px;
+box-shadow:0 0 25px #d4af37;
 }
 
 /* REGISTER BUTTON */
@@ -109,13 +102,6 @@ background:#111;
 font-size:40px;
 
 color:#ffd700;
-font-weight:bold;
-letter-spacing:3px;
-
-text-shadow:
-0 0 6px #ffd700,
-0 0 12px #d4af37;
-
 animation:goldGlow 3s infinite;
 }
 
@@ -523,8 +509,15 @@ font-size:12px;
 padding:6px 10px;
 }
 
-.main-logo{
-width:110px;
+/* 防止语言按钮压到banner */
+
+.language{
+top:10px;
+right:10px;
+}
+
+.header{
+padding-top:70px;
 }
 
 }
@@ -544,18 +537,14 @@ font-size:64px;
 /* 游戏排版 */
 
 .games{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-
 max-width:900px;
 margin:auto;
-
 padding:70px 20px;
+gap:30px;
 }
 
 .game{
-width:auto;
+width:180px;
 font-size:18px;
 }
 
@@ -604,6 +593,10 @@ font-size:70px;
 
 <div class="coins" id="coins"></div>
 
+<div class="logo">
+<img src="logo.png" width="180">
+</div>
+
 <div class="language">
 
 <div class="lang-current" onclick="toggleLang()">
@@ -625,16 +618,19 @@ font-size:70px;
 <img src="banner.png" style="width:100%;max-width:900px;border-radius:12px;display:block;margin:auto;">
 
 <div class="lang bm">
+<h1>M7 Play</h1>
 <p>MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 <a class="btn" href="register.html">DAFTAR SEKARANG</a>
 </div>
 
 <div class="lang en">
+<h1>M7 Play</h1>
 <p>WIN BIG • PLAY BIG • LIVE LUXURY</p>
 <a class="btn" href="register.html">REGISTER NOW</a>
 </div>
 
 <div class="lang cn">
+<h1>M7 Play</h1>
 <p>大奖不断 • 尽情畅玩 • 尊贵体验</p>
 <a class="btn" href="register.html">立即注册</a>
 </div>
@@ -1065,9 +1061,3 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
-
-
-
-
-
-

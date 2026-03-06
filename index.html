@@ -38,6 +38,7 @@ position:absolute;
 will-change:transform;
 animation:btcFall linear infinite;
 transform:translateZ(0);
+pointer-events:none;
 }
 
 .coin.far{
@@ -1137,44 +1138,26 @@ setInterval(updateJackpots,100);
 
 /* BTC 随机掉落 */
 
-for(let i=0;i<45;i++){
+for(let i=0;i<60;i++){
 
 let coin=document.createElement("img");
 
 coin.src="btc.png";
 coin.className="coin";
 
-/* 随机左右位置 */
 coin.style.left=Math.random()*100+"%";
 
-/* 随机延迟 */
-coin.style.animationDelay=Math.random()*12+"s";
+/* 随机速度 */
+coin.style.animationDuration=(Math.random()*10+10)+"s";
 
-/* 三层深度 */
+/* 关键修复：负延迟 */
+coin.style.animationDelay=-(Math.random()*20)+"s";
 
-let depth=Math.random();
+/* 随机大小 */
+coin.style.width=(Math.random()*25+20)+"px";
 
-if(depth<0.33){
-
-coin.classList.add("far");
-coin.style.width=(Math.random()*15+15)+"px";
-coin.style.animationDuration=(Math.random()*12+18)+"s";
-
-}
-else if(depth<0.66){
-
-coin.classList.add("mid");
-coin.style.width=(Math.random()*20+22)+"px";
-coin.style.animationDuration=(Math.random()*10+14)+"s";
-
-}
-else{
-
-coin.classList.add("near");
-coin.style.width=(Math.random()*28+28)+"px";
-coin.style.animationDuration=(Math.random()*8+10)+"s";
-
-}
+/* 随机透明度 */
+coin.style.opacity=(Math.random()*0.4+0.2);
 
 document.getElementById("coins").appendChild(coin);
 
@@ -1305,6 +1288,7 @@ e.preventDefault();
 
 </body>
 </html>
+
 
 
 

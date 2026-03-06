@@ -2,6 +2,7 @@
 <html>
 <head>
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>M7 Entertainment</title>
@@ -17,7 +18,8 @@ text-align:center;
 }
 
 .header{
-padding:70px 20px;
+padding:50px 20px;
+}
 background:linear-gradient(180deg,#000,#111);
 }
 
@@ -25,6 +27,7 @@ background:linear-gradient(180deg,#000,#111);
 font-size:42px;
 color:gold;
 font-weight:bold;
+text-shadow:0 0 15px gold;
 }
 
 .btn{
@@ -38,12 +41,23 @@ margin:10px;
 font-weight:bold;
 }
 
+.btn{
+transition:0.3s;
+}
+
+.btn:hover{
+background:#ffd700;
+transform:scale(1.05);
+box-shadow:0 0 10px gold;
+}
+
 /* 滚动中奖 */
 
 .winner{
 background:#111;
 padding:10px;
 overflow:hidden;
+white-space:nowrap;
 }
 
 .winner span{
@@ -64,13 +78,13 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
-padding:40px;
+padding:30px 15px;
 }
 
 .game{
 background:#1b1b1b;
-padding:20px;
-width:150px;
+padding:18px;
+width:140px;
 border-radius:10px;
 }
 
@@ -180,4 +194,5 @@ WhatsApp
 </div>
 
 </body>
+
 </html>

@@ -102,6 +102,13 @@ background:#111;
 font-size:40px;
 
 color:#ffd700;
+font-weight:bold;
+letter-spacing:3px;
+
+text-shadow:
+0 0 6px #ffd700,
+0 0 12px #d4af37;
+
 animation:goldGlow 3s infinite;
 }
 
@@ -526,14 +533,18 @@ font-size:64px;
 /* 游戏排版 */
 
 .games{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+
 max-width:900px;
 margin:auto;
+
 padding:70px 20px;
-gap:30px;
 }
 
 .game{
-width:180px;
+width:auto;
 font-size:18px;
 }
 
@@ -1050,3 +1061,4 @@ function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.st
 
 </body>
 </html>
+

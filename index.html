@@ -241,25 +241,31 @@ background:linear-gradient(145deg,#000,#1a1a1a);
 /* PROVIDERS CAROUSEL */
 
 .providers{
-padding:80px 20px;
+padding:100px 20px;
 background:#0f0f0f;
 overflow:hidden;
+position:relative;
 }
 
-.providers h2{
-color:#ffd700;
-margin-bottom:40px;
+.providers::before,
+.providers::after{
+content:"";
+position:absolute;
+top:0;
+width:120px;
+height:100%;
+z-index:2;
+pointer-events:none;
 }
 
-.provider-row{
-overflow:hidden;
-margin:25px 0;
+.providers::before{
+left:0;
+background:linear-gradient(to right,#0f0f0f,transparent);
 }
 
-.track{
-display:flex;
-gap:30px;
-width:max-content;
+.providers::after{
+right:0;
+background:linear-gradient(to left,#0f0f0f,transparent);
 }
 
 .track img{

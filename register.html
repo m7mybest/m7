@@ -5,68 +5,91 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <title>M7 Register</title>
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
+/* BODY */
+
 body{
+
 margin:0;
+
 font-family:Arial;
+
 color:white;
-text-align:center;
-min-height:100vh;
-overflow-x:hidden;
 
 background:
+
 linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
 url("https://images.unsplash.com/photo-1596838132731-3301c3fd4317");
 
 background-size:cover;
 background-position:center;
 
+height:100vh;
+width:100vw;
+
+overflow:hidden;
+
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
+
+position:fixed;
+
 }
 
 /* GOLD PARTICLES */
 
 body:before{
+
 content:"";
+
 position:absolute;
+
 width:200%;
 height:200%;
 
 background-image:radial-gradient(#d4af37 1px, transparent 1px);
+
 background-size:40px 40px;
 
 opacity:0.15;
 
 animation:goldMove 40s linear infinite;
+
 }
 
 @keyframes goldMove{
+
 from{transform:translateY(0)}
 to{transform:translateY(-400px)}
+
 }
 
-/* CARD */
+/* REGISTER CARD */
 
 .container{
 
-width:100%;
+width:92%;
 max-width:420px;
 
-padding:35px 25px;
+padding:30px 22px;
 
 background:rgba(0,0,0,0.75);
 
 border-radius:16px;
 
 box-shadow:
+
 0 0 30px rgba(212,175,55,0.25),
 0 0 80px rgba(0,0,0,0.9);
 
@@ -79,11 +102,17 @@ position:relative;
 /* TITLE */
 
 h1{
+
 color:#d4af37;
-font-size:32px;
+
+font-size:28px;
+
 letter-spacing:3px;
+
 margin-bottom:25px;
+
 text-shadow:0 0 15px rgba(212,175,55,0.8);
+
 }
 
 /* INPUT */
@@ -91,22 +120,22 @@ text-shadow:0 0 15px rgba(212,175,55,0.8);
 input,select{
 
 width:100%;
-padding:14px;
 
-margin:10px 0;
+padding:13px;
+
+margin:9px 0;
 
 border-radius:8px;
 
 border:1px solid rgba(212,175,55,0.3);
 
 background:#141414;
+
 color:white;
 
-font-size:15px;
+font-size:14px;
 
 transition:0.3s;
-
-box-sizing:border-box;
 
 }
 
@@ -116,23 +145,29 @@ outline:none;
 
 border:1px solid #d4af37;
 
-box-shadow:0 0 12px rgba(212,175,55,0.7);
+box-shadow:0 0 10px rgba(212,175,55,0.7);
 
 }
 
 /* PHONE */
 
 .phone-row{
+
 display:flex;
-gap:10px;
+gap:8px;
+
 }
 
 .phone-row select{
-width:40%;
+
+width:38%;
+
 }
 
 .phone-row input{
-width:60%;
+
+width:62%;
+
 }
 
 /* BUTTON */
@@ -140,17 +175,18 @@ width:60%;
 button{
 
 width:100%;
-padding:16px;
 
-margin-top:20px;
+padding:15px;
+
+margin-top:18px;
 
 border:none;
+
 border-radius:8px;
 
 font-weight:bold;
-font-size:16px;
 
-letter-spacing:1px;
+font-size:15px;
 
 cursor:pointer;
 
@@ -161,6 +197,7 @@ background:linear-gradient(90deg,#d4af37,#f6e27a,#d4af37);
 background-size:200%;
 
 box-shadow:
+
 0 0 15px rgba(212,175,55,0.7),
 inset 0 0 10px rgba(255,255,255,0.4);
 
@@ -169,46 +206,14 @@ animation:goldShine 3s linear infinite;
 }
 
 @keyframes goldShine{
+
 0%{background-position:0%}
 100%{background-position:200%}
-}
 
-button:hover{
-transform:translateY(-2px);
 }
-
-/* LANGUAGE */
 
 .lang{
 display:none;
-}
-
-/* MOBILE OPTIMIZE */
-
-@media (max-width:480px){
-
-.container{
-padding:28px 20px;
-}
-
-h1{
-font-size:26px;
-}
-
-input,select{
-font-size:14px;
-padding:12px;
-}
-
-button{
-font-size:15px;
-padding:14px;
-}
-
-.phone-row{
-gap:8px;
-}
-
 }
 
 </style>
@@ -224,8 +229,6 @@ gap:8px;
 <span class="lang bm">M7 REGISTER</span> <span class="lang en">M7 REGISTER</span> <span class="lang cn">M7 注册</span>
 
 </h1>
-
-<!-- PHONE -->
 
 <div class="phone-row">
 

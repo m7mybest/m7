@@ -274,6 +274,12 @@ box-shadow:0 0 15px #ffd700;
 100%{transform:translateX(-50%)}
 }
 
+.track{
+display:flex;
+gap:30px;
+width:200%;
+}
+
 @keyframes scrollRight{
 0%{transform:translateX(-50%)}
 100%{transform:translateX(0)}
@@ -1169,30 +1175,36 @@ document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{m
 }
 
 updateJackpots();
-setInterval(updateJackpots,50);
+setInterval(updateJackpots,200);
 
 /* BTC 随机掉落 */
 
-for(let i=0;i<60;i++){
+for(let i=0;i<40;i++){
 
 let coin=document.createElement("img");
 
 coin.src="btc.png";
-coin.className="coin";
+
+/* 随机层次 */
+let layer=Math.random();
+
+if(layer<0.33){
+coin.className="coin far";
+}
+else if(layer<0.66){
+coin.className="coin mid";
+}
+else{
+coin.className="coin near";
+}
 
 coin.style.left=Math.random()*100+"%";
 
-/* 随机速度 */
 coin.style.animationDuration=(Math.random()*10+10)+"s";
 
-/* 关键修复：负延迟 */
 coin.style.animationDelay=-(Math.random()*20)+"s";
 
-/* 随机大小 */
 coin.style.width=(Math.random()*25+20)+"px";
-
-/* 随机透明度 */
-coin.style.opacity=(Math.random()*0.4+0.2);
 
 document.getElementById("coins").appendChild(coin);
 
@@ -1327,7 +1339,6 @@ e.preventDefault();
 
 </body>
 </html>
-
 
 
 

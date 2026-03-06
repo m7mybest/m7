@@ -1128,10 +1128,24 @@ document.getElementById("coins").appendChild(coin);
 
 function toggleLang(){ let menu=document.querySelector(".lang-menu"); if(menu.style.display==="block"){ menu.style.display="none"; }else{ menu.style.display="block"; } } function setLang(lang){ document.querySelectorAll(".lang").forEach(el=>{ el.style.display="none"; }); document.querySelectorAll("." + lang).forEach(el=>{ el.style.display="block"; }); localStorage.setItem("lang",lang); if(lang==="bm"){document.getElementById("currentLang").innerText="BM";} if(lang==="en"){document.getElementById("currentLang").innerText="EN";} if(lang==="cn"){document.getElementById("currentLang").innerText="中文";} } function detectLang(){ let saved=localStorage.getItem("lang"); if(saved){ setLang(saved); return; } let lang=navigator.language; if(lang.includes("zh")){setLang("cn");} else if(lang.includes("ms")){setLang("bm");} else{setLang("en");} } detectLang();
 
+  /* 点击页面关闭语言菜单 */
+
+document.addEventListener("click",function(e){
+
+let menu=document.querySelector(".lang-menu");
+let button=document.querySelector(".lang-current");
+
+if(!menu.contains(e.target) && !button.contains(e.target)){
+menu.style.display="none";
+}
+
+});
+
 </script>
 
 </body>
 </html>
+
 
 
 

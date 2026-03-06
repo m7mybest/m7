@@ -113,7 +113,8 @@ text-shadow:
 
 .header h1{
 font-size:52px;
-color:#d4af37;
+position:relative;
+display:inline-block;
 }
 
 .header img{
@@ -688,6 +689,28 @@ body{
 -ms-user-select:none;
 user-select:none;
 }
+
+/* M7 PLAY 标题 */
+
+.logo-title{
+font-size:52px;
+font-weight:900;
+letter-spacing:6px;
+
+background:linear-gradient(90deg,#ffd700,#fff3a0,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-4px);}
+100%{transform:translateY(0px);}
+
+}
 </style>
 
 </head>
@@ -717,19 +740,19 @@ user-select:none;
 <img src="banner.png" style="width:100%;max-width:900px;border-radius:12px;display:block;margin:auto;">
 
 <div class="lang bm">
-<h1>M7 Play</h1>
+<h1 class="logo-title">M7 PLAY</h1>
 <p class="slogan">MENANG BESAR • MAIN BESAR • HIDUP MEWAH</p>
 <a class="btn" href="register.html">DAFTAR SEKARANG</a>
 </div>
 
 <div class="lang en">
-<h1>M7 Play</h1>
+<h1 class="logo-title">M7 PLAY</h1>
 <p class="slogan">WIN BIG • PLAY BIG • LIVE LUXURY</p>
 <a class="btn" href="register.html">REGISTER NOW</a>
 </div>
 
 <div class="lang cn">
-<h1>M7 Play</h1>
+<h1 class="logo-title">M7 PLAY</h1>
 <p class="slogan">大奖不断 • 尽情畅玩 • 尊贵体验</p>
 <a class="btn" href="register.html">立即注册</a>
 </div>
@@ -1281,16 +1304,19 @@ document.addEventListener("selectstart",function(e){
 e.preventDefault();
 });
 
+
+
 /* 禁止拖拽图片 */
 document.addEventListener("dragstart",function(e){
 e.preventDefault();
 });
 
+
+
 </script>
 
 </body>
 </html>
-
 
 
 

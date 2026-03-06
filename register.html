@@ -16,8 +16,8 @@ margin:0;
 font-family:Arial;
 color:white;
 text-align:center;
-height:100vh;
-overflow:hidden;
+min-height:100vh;
+overflow-x:hidden;
 
 background:
 linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
@@ -29,6 +29,7 @@ background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:20px;
 }
 
 /* GOLD PARTICLES */
@@ -56,8 +57,10 @@ to{transform:translateY(-400px)}
 
 .container{
 
-width:420px;
-padding:40px 30px;
+width:100%;
+max-width:420px;
+
+padding:35px 25px;
 
 background:rgba(0,0,0,0.75);
 
@@ -77,9 +80,9 @@ position:relative;
 
 h1{
 color:#d4af37;
-font-size:36px;
+font-size:32px;
 letter-spacing:3px;
-margin-bottom:30px;
+margin-bottom:25px;
 text-shadow:0 0 15px rgba(212,175,55,0.8);
 }
 
@@ -89,7 +92,8 @@ input,select{
 
 width:100%;
 padding:14px;
-margin:12px 0;
+
+margin:10px 0;
 
 border-radius:8px;
 
@@ -101,6 +105,8 @@ color:white;
 font-size:15px;
 
 transition:0.3s;
+
+box-sizing:border-box;
 
 }
 
@@ -122,11 +128,11 @@ gap:10px;
 }
 
 .phone-row select{
-width:45%;
+width:40%;
 }
 
 .phone-row input{
-width:55%;
+width:60%;
 }
 
 /* BUTTON */
@@ -135,6 +141,7 @@ button{
 
 width:100%;
 padding:16px;
+
 margin-top:20px;
 
 border:none;
@@ -170,8 +177,38 @@ button:hover{
 transform:translateY(-2px);
 }
 
+/* LANGUAGE */
+
 .lang{
 display:none;
+}
+
+/* MOBILE OPTIMIZE */
+
+@media (max-width:480px){
+
+.container{
+padding:28px 20px;
+}
+
+h1{
+font-size:26px;
+}
+
+input,select{
+font-size:14px;
+padding:12px;
+}
+
+button{
+font-size:15px;
+padding:14px;
+}
+
+.phone-row{
+gap:8px;
+}
+
 }
 
 </style>
@@ -218,8 +255,6 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'')"
 
 </div>
 
-<!-- BANK -->
-
 <select id="bank">
 
 <option value=""
@@ -249,8 +284,6 @@ data-cn="选择银行"
 
 </select>
 
-<!-- NAME -->
-
 <input id="name"
 
 data-bm="NAMA AKAUN"
@@ -262,8 +295,6 @@ placeholder="NAMA AKAUN"
 oninput="this.value=this.value.replace(/[^a-zA-Z ]/g,'')"
 
 >
-
-<!-- ACCOUNT -->
 
 <input id="acc"
 
@@ -289,8 +320,6 @@ oninput="this.value=this.value.replace(/[^0-9]/g,'')"
 
 <script>
 
-/* LANGUAGE */
-
 function setLang(lang){
 
 document.querySelectorAll(".lang").forEach(el=>{
@@ -302,23 +331,17 @@ el.style.display="inline";
 });
 
 document.querySelectorAll("input").forEach(el=>{
-
 let text=el.getAttribute("data-"+lang);
-
 if(text){
 el.placeholder=text;
 }
-
 });
 
 document.querySelectorAll("option").forEach(el=>{
-
 let text=el.getAttribute("data-"+lang);
-
 if(text){
 el.textContent=text;
 }
-
 });
 
 }
@@ -331,8 +354,6 @@ setLang(saved);
 setLang("bm");
 }
 
-/* REGISTER */
-
 function send(){
 
 let phone=document.getElementById("phone").value.trim();
@@ -343,11 +364,8 @@ let name=document.getElementById("name").value.trim();
 let acc=document.getElementById("acc").value.trim();
 
 if(phone=="" || bank=="" || name=="" || acc==""){
-
 alert("Please fill all information");
-
 return;
-
 }
 
 if(phone.startsWith("0")){

@@ -65,16 +65,20 @@ opacity:0;
 opacity:1;
 }
 
-85%{
-transform:translateY(92vh) rotate(600deg);
+80%{
+transform:translateY(95vh) rotate(650deg);
 }
 
-92%{
-transform:translateY(86vh) rotate(630deg);
+88%{
+transform:translateY(88vh) rotate(690deg);
+}
+
+94%{
+transform:translateY(96vh) rotate(720deg);
 }
 
 100%{
-transform:translateY(100vh) rotate(720deg);
+transform:translateY(100vh) rotate(760deg);
 opacity:0;
 }
 
@@ -142,6 +146,15 @@ display:inline-block;
 
 position:relative;
 overflow:hidden;
+}
+
+.btn:hover{
+transform:scale(1.08);
+
+box-shadow:
+0 0 20px #ffd700,
+0 0 40px #ffd700,
+0 0 60px #ffd700;
 }
 
 .btn::after{
@@ -320,6 +333,28 @@ text-shadow:0 0 8px #3ea6ff;
 .minor{
 color:#2ecc71;
 text-shadow:0 0 8px #2ecc71;
+}
+
+.jackpot-flash{
+animation:jackpotFlash 0.6s;
+}
+
+@keyframes jackpotFlash{
+
+0%{
+text-shadow:0 0 5px #ffd700;
+}
+
+50%{
+text-shadow:
+0 0 15px #ffd700,
+0 0 40px #ffd700;
+}
+
+100%{
+text-shadow:0 0 5px #ffd700;
+}
+
 }
 
 /* VIP 放大 */
@@ -1171,6 +1206,18 @@ let minor=1500+seconds*(180/86400);
 document.getElementById("mega").innerText="RM "+mega.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 document.getElementById("major").innerText="RM "+major.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
 document.getElementById("minor").innerText="RM "+minor.toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+
+/* Jackpot 闪光效果 */
+
+document.getElementById("mega").classList.add("jackpot-flash");
+document.getElementById("major").classList.add("jackpot-flash");
+document.getElementById("minor").classList.add("jackpot-flash");
+
+setTimeout(()=>{
+document.getElementById("mega").classList.remove("jackpot-flash");
+document.getElementById("major").classList.remove("jackpot-flash");
+document.getElementById("minor").classList.remove("jackpot-flash");
+},500);
 
 }
 
